@@ -1,0 +1,1000 @@
+tench, Tinca_tinca
+goldfish, Carassius_auratus
+great_white_shark, white_shark, man-eater, man-eating_shark, Carcharodon_carcharias
+tiger_shark, Galeocerdo_cuvieri
+hammerhead, hammerhead_shark
+electric_ray, crampfish, numbfish, torpedo
+stingray
+cock
+hen
+ostrich, Struthio_camelus
+brambling, Fringilla_montifringilla
+goldfinch, Carduelis_carduelis
+house_finch, linnet, Carpodacus_mexicanus
+junco, snowbird
+indigo_bunting, indigo_finch, indigo_bird, Passerina_cyanea
+robin, American_robin, Turdus_migratorius
+bulbul
+jay
+magpie
+chickadee
+water_ouzel, dipper
+kite
+bald_eagle, American_eagle, Haliaeetus_leucocephalus
+vulture
+great_grey_owl, great_gray_owl, Strix_nebulosa
+European_fire_salamander, Salamandra_salamandra
+common_newt, Triturus_vulgaris
+eft
+spotted_salamander, Ambystoma_maculatum
+axolotl, mud_puppy, Ambystoma_mexicanum
+bullfrog, Rana_catesbeiana
+tree_frog, tree-frog
+tailed_frog, bell_toad, ribbed_toad, tailed_toad, Ascaphus_trui
+loggerhead, loggerhead_turtle, Caretta_caretta
+leatherback_turtle, leatherback, leathery_turtle, Dermochelys_coriacea
+mud_turtle
+terrapin
+box_turtle, box_tortoise
+banded_gecko
+common_iguana, iguana, Iguana_iguana
+American_chameleon, anole, Anolis_carolinensis
+whiptail, whiptail_lizard
+agama
+frilled_lizard, Chlamydosaurus_kingi
+alligator_lizard
+Gila_monster, Heloderma_suspectum
+green_lizard, Lacerta_viridis
+African_chameleon, Chamaeleo_chamaeleon
+Komodo_dragon, Komodo_lizard, dragon_lizard, giant_lizard, Varanus_komodoensis
+African_crocodile, Nile_crocodile, Crocodylus_niloticus
+American_alligator, Alligator_mississipiensis
+triceratops
+thunder_snake, worm_snake, Carphophis_amoenus
+ringneck_snake, ring-necked_snake, ring_snake
+hognose_snake, puff_adder, sand_viper
+green_snake, grass_snake
+king_snake, kingsnake
+garter_snake, grass_snake
+water_snake
+vine_snake
+night_snake, Hypsiglena_torquata
+boa_constrictor, Constrictor_constrictor
+rock_python, rock_snake, Python_sebae
+Indian_cobra, Naja_naja
+green_mamba
+sea_snake
+horned_viper, cerastes, sand_viper, horned_asp, Cerastes_cornutus
+diamondback, diamondback_rattlesnake, Crotalus_adamanteus
+sidewinder, horned_rattlesnake, Crotalus_cerastes
+trilobite
+harvestman, daddy_longlegs, Phalangium_opilio
+scorpion
+black_and_gold_garden_spider, Argiope_aurantia
+barn_spider, Araneus_cavaticus
+garden_spider, Aranea_diademata
+black_widow, Latrodectus_mactans
+tarantula
+wolf_spider, hunting_spider
+tick
+centipede
+black_grouse
+ptarmigan
+ruffed_grouse, partridge, Bonasa_umbellus
+prairie_chicken, prairie_grouse, prairie_fowl
+peacock
+quail
+partridge
+African_grey, African_gray, Psittacus_erithacus
+macaw
+sulphur-crested_cockatoo, Kakatoe_galerita, Cacatua_galerita
+lorikeet
+coucal
+bee_eater
+hornbill
+hummingbird
+jacamar
+toucan
+drake
+red-breasted_merganser, Mergus_serrator
+goose
+black_swan, Cygnus_atratus
+tusker
+echidna, spiny_anteater, anteater
+platypus, duckbill, duckbilled_platypus, duck-billed_platypus, Ornithorhynchus_anatinus
+wallaby, brush_kangaroo
+koala, koala_bear, kangaroo_bear, native_bear, Phascolarctos_cinereus
+wombat
+jellyfish
+sea_anemone, anemone
+brain_coral
+flatworm, platyhelminth
+nematode, nematode_worm, roundworm
+conch
+snail
+slug
+sea_slug, nudibranch
+chiton, coat-of-mail_shell, sea_cradle, polyplacophore
+chambered_nautilus, pearly_nautilus, nautilus
+Dungeness_crab, Cancer_magister
+rock_crab, Cancer_irroratus
+fiddler_crab
+king_crab, Alaska_crab, Alaskan_king_crab, Alaska_king_crab, Paralithodes_camtschatica
+American_lobster, Northern_lobster, Maine_lobster, Homarus_americanus
+spiny_lobster, langouste, rock_lobster, crawfish, crayfish, sea_crawfish
+crayfish, crawfish, crawdad, crawdaddy
+hermit_crab
+isopod
+white_stork, Ciconia_ciconia
+black_stork, Ciconia_nigra
+spoonbill
+flamingo
+little_blue_heron, Egretta_caerulea
+American_egret, great_white_heron, Egretta_albus
+bittern
+crane
+limpkin, Aramus_pictus
+European_gallinule, Porphyrio_porphyrio
+American_coot, marsh_hen, mud_hen, water_hen, Fulica_americana
+bustard
+ruddy_turnstone, Arenaria_interpres
+red-backed_sandpiper, dunlin, Erolia_alpina
+redshank, Tringa_totanus
+dowitcher
+oystercatcher, oyster_catcher
+pelican
+king_penguin, Aptenodytes_patagonica
+albatross, mollymawk
+grey_whale, gray_whale, devilfish, Eschrichtius_gibbosus, Eschrichtius_robustus
+killer_whale, killer, orca, grampus, sea_wolf, Orcinus_orca
+dugong, Dugong_dugon
+sea_lion
+Chihuahua
+Japanese_spaniel
+Maltese_dog, Maltese_terrier, Maltese
+Pekinese, Pekingese, Peke
+Shih-Tzu
+Blenheim_spaniel
+papillon
+toy_terrier
+Rhodesian_ridgeback
+Afghan_hound, Afghan
+basset, basset_hound
+beagle
+bloodhound, sleuthhound
+bluetick
+black-and-tan_coonhound
+Walker_hound, Walker_foxhound
+English_foxhound
+redbone
+borzoi, Russian_wolfhound
+Irish_wolfhound
+Italian_greyhound
+whippet
+Ibizan_hound, Ibizan_Podenco
+Norwegian_elkhound, elkhound
+otterhound, otter_hound
+Saluki, gazelle_hound
+Scottish_deerhound, deerhound
+Weimaraner
+Staffordshire_bullterrier, Staffordshire_bull_terrier
+American_Staffordshire_terrier, Staffordshire_terrier, American_pit_bull_terrier, pit_bull_terrier
+Bedlington_terrier
+Border_terrier
+Kerry_blue_terrier
+Irish_terrier
+Norfolk_terrier
+Norwich_terrier
+Yorkshire_terrier
+wire-haired_fox_terrier
+Lakeland_terrier
+Sealyham_terrier, Sealyham
+Airedale, Airedale_terrier
+cairn, cairn_terrier
+Australian_terrier
+Dandie_Dinmont, Dandie_Dinmont_terrier
+Boston_bull, Boston_terrier
+miniature_schnauzer
+giant_schnauzer
+standard_schnauzer
+Scotch_terrier, Scottish_terrier, Scottie
+Tibetan_terrier, chrysanthemum_dog
+silky_terrier, Sydney_silky
+soft-coated_wheaten_terrier
+West_Highland_white_terrier
+Lhasa, Lhasa_apso
+flat-coated_retriever
+curly-coated_retriever
+golden_retriever
+Labrador_retriever
+Chesapeake_Bay_retriever
+German_short-haired_pointer
+vizsla, Hungarian_pointer
+English_setter
+Irish_setter, red_setter
+Gordon_setter
+Brittany_spaniel
+clumber, clumber_spaniel
+English_springer, English_springer_spaniel
+Welsh_springer_spaniel
+cocker_spaniel, English_cocker_spaniel, cocker
+Sussex_spaniel
+Irish_water_spaniel
+kuvasz
+schipperke
+groenendael
+malinois
+briard
+kelpie
+komondor
+Old_English_sheepdog, bobtail
+Shetland_sheepdog, Shetland_sheep_dog, Shetland
+collie
+Border_collie
+Bouvier_des_Flandres, Bouviers_des_Flandres
+Rottweiler
+German_shepherd, German_shepherd_dog, German_police_dog, alsatian
+Doberman, Doberman_pinscher
+miniature_pinscher
+Greater_Swiss_Mountain_dog
+Bernese_mountain_dog
+Appenzeller
+EntleBucher
+boxer
+bull_mastiff
+Tibetan_mastiff
+French_bulldog
+Great_Dane
+Saint_Bernard, St_Bernard
+Eskimo_dog, husky
+malamute, malemute, Alaskan_malamute
+Siberian_husky
+dalmatian, coach_dog, carriage_dog
+affenpinscher, monkey_pinscher, monkey_dog
+basenji
+pug, pug-dog
+Leonberg
+Newfoundland, Newfoundland_dog
+Great_Pyrenees
+Samoyed, Samoyede
+Pomeranian
+chow, chow_chow
+keeshond
+Brabancon_griffon
+Pembroke, Pembroke_Welsh_corgi
+Cardigan, Cardigan_Welsh_corgi
+toy_poodle
+miniature_poodle
+standard_poodle
+Mexican_hairless
+timber_wolf, grey_wolf, gray_wolf, Canis_lupus
+white_wolf, Arctic_wolf, Canis_lupus_tundrarum
+red_wolf, maned_wolf, Canis_rufus, Canis_niger
+coyote, prairie_wolf, brush_wolf, Canis_latrans
+dingo, warrigal, warragal, Canis_dingo
+dhole, Cuon_alpinus
+African_hunting_dog, hyena_dog, Cape_hunting_dog, Lycaon_pictus
+hyena, hyaena
+red_fox, Vulpes_vulpes
+kit_fox, Vulpes_macrotis
+Arctic_fox, white_fox, Alopex_lagopus
+grey_fox, gray_fox, Urocyon_cinereoargenteus
+tabby, tabby_cat
+tiger_cat
+Persian_cat
+Siamese_cat, Siamese
+Egyptian_cat
+cougar, puma, catamount, mountain_lion, painter, panther, Felis_concolor
+lynx, catamount
+leopard, Panthera_pardus
+snow_leopard, ounce, Panthera_uncia
+jaguar, panther, Panthera_onca, Felis_onca
+lion, king_of_beasts, Panthera_leo
+tiger, Panthera_tigris
+cheetah, chetah, Acinonyx_jubatus
+brown_bear, bruin, Ursus_arctos
+American_black_bear, black_bear, Ursus_americanus, Euarctos_americanus
+ice_bear, polar_bear, Ursus_Maritimus, Thalarctos_maritimus
+sloth_bear, Melursus_ursinus, Ursus_ursinus
+mongoose
+meerkat, mierkat
+tiger_beetle
+ladybug, ladybeetle, lady_beetle, ladybird, ladybird_beetle
+ground_beetle, carabid_beetle
+long-horned_beetle, longicorn, longicorn_beetle
+leaf_beetle, chrysomelid
+dung_beetle
+rhinoceros_beetle
+weevil
+fly
+bee
+ant, emmet, pismire
+grasshopper, hopper
+cricket
+walking_stick, walkingstick, stick_insect
+cockroach, roach
+mantis, mantid
+cicada, cicala
+leafhopper
+lacewing, lacewing_fly
+dragonfly, darning_needle, devil's_darning_needle, sewing_needle, snake_feeder, snake_doctor, mosquito_hawk, skeeter_hawk
+damselfly
+admiral
+ringlet, ringlet_butterfly
+monarch, monarch_butterfly, milkweed_butterfly, Danaus_plexippus
+cabbage_butterfly
+sulphur_butterfly, sulfur_butterfly
+lycaenid, lycaenid_butterfly
+starfish, sea_star
+sea_urchin
+sea_cucumber, holothurian
+wood_rabbit, cottontail, cottontail_rabbit
+hare
+Angora, Angora_rabbit
+hamster
+porcupine, hedgehog
+fox_squirrel, eastern_fox_squirrel, Sciurus_niger
+marmot
+beaver
+guinea_pig, Cavia_cobaya
+sorrel
+zebra
+hog, pig, grunter, squealer, Sus_scrofa
+wild_boar, boar, Sus_scrofa
+warthog
+hippopotamus, hippo, river_horse, Hippopotamus_amphibius
+ox
+water_buffalo, water_ox, Asiatic_buffalo, Bubalus_bubalis
+bison
+ram, tup
+bighorn, bighorn_sheep, cimarron, Rocky_Mountain_bighorn, Rocky_Mountain_sheep, Ovis_canadensis
+ibex, Capra_ibex
+hartebeest
+impala, Aepyceros_melampus
+gazelle
+Arabian_camel, dromedary, Camelus_dromedarius
+llama
+weasel
+mink
+polecat, fitch, foulmart, foumart, Mustela_putorius
+black-footed_ferret, ferret, Mustela_nigripes
+otter
+skunk, polecat, wood_pussy
+badger
+armadillo
+three-toed_sloth, ai, Bradypus_tridactylus
+orangutan, orang, orangutang, Pongo_pygmaeus
+gorilla, Gorilla_gorilla
+chimpanzee, chimp, Pan_troglodytes
+gibbon, Hylobates_lar
+siamang, Hylobates_syndactylus, Symphalangus_syndactylus
+guenon, guenon_monkey
+patas, hussar_monkey, Erythrocebus_patas
+baboon
+macaque
+langur
+colobus, colobus_monkey
+proboscis_monkey, Nasalis_larvatus
+marmoset
+capuchin, ringtail, Cebus_capucinus
+howler_monkey, howler
+titi, titi_monkey
+spider_monkey, Ateles_geoffroyi
+squirrel_monkey, Saimiri_sciureus
+Madagascar_cat, ring-tailed_lemur, Lemur_catta
+indri, indris, Indri_indri, Indri_brevicaudatus
+Indian_elephant, Elephas_maximus
+African_elephant, Loxodonta_africana
+lesser_panda, red_panda, panda, bear_cat, cat_bear, Ailurus_fulgens
+giant_panda, panda, panda_bear, coon_bear, Ailuropoda_melanoleuca
+barracouta, snoek
+eel
+coho, cohoe, coho_salmon, blue_jack, silver_salmon, Oncorhynchus_kisutch
+rock_beauty, Holocanthus_tricolor
+anemone_fish
+sturgeon
+gar, garfish, garpike, billfish, Lepisosteus_osseus
+lionfish
+puffer, pufferfish, blowfish, globefish
+abacus
+abaya
+academic_gown, academic_robe, judge's_robe
+accordion, piano_accordion, squeeze_box
+acoustic_guitar
+aircraft_carrier, carrier, flattop, attack_aircraft_carrier
+airliner
+airship, dirigible
+altar
+ambulance
+amphibian, amphibious_vehicle
+analog_clock
+apiary, bee_house
+apron
+ashcan, trash_can, garbage_can, wastebin, ash_bin, ash-bin, ashbin, dustbin, trash_barrel, trash_bin
+assault_rifle, assault_gun
+backpack, back_pack, knapsack, packsack, rucksack, haversack
+bakery, bakeshop, bakehouse
+balance_beam, beam
+balloon
+ballpoint, ballpoint_pen, ballpen, Biro
+Band_Aid
+banjo
+bannister, banister, balustrade, balusters, handrail
+barbell
+barber_chair
+barbershop
+barn
+barometer
+barrel, cask
+barrow, garden_cart, lawn_cart, wheelbarrow
+baseball
+basketball
+bassinet
+bassoon
+bathing_cap, swimming_cap
+bath_towel
+bathtub, bathing_tub, bath, tub
+beach_wagon, station_wagon, wagon, estate_car, beach_waggon, station_waggon, waggon
+beacon, lighthouse, beacon_light, pharos
+beaker
+bearskin, busby, shako
+beer_bottle
+beer_glass
+bell_cote, bell_cot
+bib
+bicycle-built-for-two, tandem_bicycle, tandem
+bikini, two-piece
+binder, ring-binder
+binoculars, field_glasses, opera_glasses
+birdhouse
+boathouse
+bobsled, bobsleigh, bob
+bolo_tie, bolo, bola_tie, bola
+bonnet, poke_bonnet
+bookcase
+bookshop, bookstore, bookstall
+bottlecap
+bow
+bow_tie, bow-tie, bowtie
+brass, memorial_tablet, plaque
+brassiere, bra, bandeau
+breakwater, groin, groyne, mole, bulwark, seawall, jetty
+breastplate, aegis, egis
+broom
+bucket, pail
+buckle
+bulletproof_vest
+bullet_train, bullet
+butcher_shop, meat_market
+cab, hack, taxi, taxicab
+caldron, cauldron
+candle, taper, wax_light
+cannon
+canoe
+can_opener, tin_opener
+cardigan
+car_mirror
+carousel, carrousel, merry-go-round, roundabout, whirligig
+carpenter's_kit, tool_kit
+carton
+car_wheel
+cash_machine, cash_dispenser, automated_teller_machine, automatic_teller_machine, automated_teller, automatic_teller, ATM
+cassette
+cassette_player
+castle
+catamaran
+CD_player
+cello, violoncello
+cellular_telephone, cellular_phone, cellphone, cell, mobile_phone
+chain
+chainlink_fence
+chain_mail, ring_mail, mail, chain_armor, chain_armour, ring_armor, ring_armour
+chain_saw, chainsaw
+chest
+chiffonier, commode
+chime, bell, gong
+china_cabinet, china_closet
+Christmas_stocking
+church, church_building
+cinema, movie_theater, movie_theatre, movie_house, picture_palace
+cleaver, meat_cleaver, chopper
+cliff_dwelling
+cloak
+clog, geta, patten, sabot
+cocktail_shaker
+coffee_mug
+coffeepot
+coil, spiral, volute, whorl, helix
+combination_lock
+computer_keyboard, keypad
+confectionery, confectionary, candy_store
+container_ship, containership, container_vessel
+convertible
+corkscrew, bottle_screw
+cornet, horn, trumpet, trump
+cowboy_boot
+cowboy_hat, ten-gallon_hat
+cradle
+crane
+crash_helmet
+crate
+crib, cot
+Crock_Pot
+croquet_ball
+crutch
+cuirass
+dam, dike, dyke
+desk
+desktop_computer
+dial_telephone, dial_phone
+diaper, nappy, napkin
+digital_clock
+digital_watch
+dining_table, board
+dishrag, dishcloth
+dishwasher, dish_washer, dishwashing_machine
+disk_brake, disc_brake
+dock, dockage, docking_facility
+dogsled, dog_sled, dog_sleigh
+dome
+doormat, welcome_mat
+drilling_platform, offshore_rig
+drum, membranophone, tympan
+drumstick
+dumbbell
+Dutch_oven
+electric_fan, blower
+electric_guitar
+electric_locomotive
+entertainment_center
+envelope
+espresso_maker
+face_powder
+feather_boa, boa
+file, file_cabinet, filing_cabinet
+fireboat
+fire_engine, fire_truck
+fire_screen, fireguard
+flagpole, flagstaff
+flute, transverse_flute
+folding_chair
+football_helmet
+forklift
+fountain
+fountain_pen
+four-poster
+freight_car
+French_horn, horn
+frying_pan, frypan, skillet
+fur_coat
+garbage_truck, dustcart
+gasmask, respirator, gas_helmet
+gas_pump, gasoline_pump, petrol_pump, island_dispenser
+goblet
+go-kart
+golf_ball
+golfcart, golf_cart
+gondola
+gong, tam-tam
+gown
+grand_piano, grand
+greenhouse, nursery, glasshouse
+grille, radiator_grille
+grocery_store, grocery, food_market, market
+guillotine
+hair_slide
+hair_spray
+half_track
+hammer
+hamper
+hand_blower, blow_dryer, blow_drier, hair_dryer, hair_drier
+hand-held_computer, hand-held_microcomputer
+handkerchief, hankie, hanky, hankey
+hard_disc, hard_disk, fixed_disk
+harmonica, mouth_organ, harp, mouth_harp
+harp
+harvester, reaper
+hatchet
+holster
+home_theater, home_theatre
+honeycomb
+hook, claw
+hoopskirt, crinoline
+horizontal_bar, high_bar
+horse_cart, horse-cart
+hourglass
+iPod
+iron, smoothing_iron
+jack-o'-lantern
+jean, blue_jean, denim
+jeep, landrover
+jersey, T-shirt, tee_shirt
+jigsaw_puzzle
+jinrikisha, ricksha, rickshaw
+joystick
+kimono
+knee_pad
+knot
+lab_coat, laboratory_coat
+ladle
+lampshade, lamp_shade
+laptop, laptop_computer
+lawn_mower, mower
+lens_cap, lens_cover
+letter_opener, paper_knife, paperknife
+library
+lifeboat
+lighter, light, igniter, ignitor
+limousine, limo
+liner, ocean_liner
+lipstick, lip_rouge
+Loafer
+lotion
+loudspeaker, speaker, speaker_unit, loudspeaker_system, speaker_system
+loupe, jeweler's_loupe
+lumbermill, sawmill
+magnetic_compass
+mailbag, postbag
+mailbox, letter_box
+maillot
+maillot, tank_suit
+manhole_cover
+maraca
+marimba, xylophone
+mask
+matchstick
+maypole
+maze, labyrinth
+measuring_cup
+medicine_chest, medicine_cabinet
+megalith, megalithic_structure
+microphone, mike
+microwave, microwave_oven
+military_uniform
+milk_can
+minibus
+miniskirt, mini
+minivan
+missile
+mitten
+mixing_bowl
+mobile_home, manufactured_home
+Model_T
+modem
+monastery
+monitor
+moped
+mortar
+mortarboard
+mosque
+mosquito_net
+motor_scooter, scooter
+mountain_bike, all-terrain_bike, off-roader
+mountain_tent
+mouse, computer_mouse
+mousetrap
+moving_van
+muzzle
+nail
+neck_brace
+necklace
+nipple
+notebook, notebook_computer
+obelisk
+oboe, hautboy, hautbois
+ocarina, sweet_potato
+odometer, hodometer, mileometer, milometer
+oil_filter
+organ, pipe_organ
+oscilloscope, scope, cathode-ray_oscilloscope, CRO
+overskirt
+oxcart
+oxygen_mask
+packet
+paddle, boat_paddle
+paddlewheel, paddle_wheel
+padlock
+paintbrush
+pajama, pyjama, pj's, jammies
+palace
+panpipe, pandean_pipe, syrinx
+paper_towel
+parachute, chute
+parallel_bars, bars
+park_bench
+parking_meter
+passenger_car, coach, carriage
+patio, terrace
+pay-phone, pay-station
+pedestal, plinth, footstall
+pencil_box, pencil_case
+pencil_sharpener
+perfume, essence
+Petri_dish
+photocopier
+pick, plectrum, plectron
+pickelhaube
+picket_fence, paling
+pickup, pickup_truck
+pier
+piggy_bank, penny_bank
+pill_bottle
+pillow
+ping-pong_ball
+pinwheel
+pirate, pirate_ship
+pitcher, ewer
+plane, carpenter's_plane, woodworking_plane
+planetarium
+plastic_bag
+plate_rack
+plow, plough
+plunger, plumber's_helper
+Polaroid_camera, Polaroid_Land_camera
+pole
+police_van, police_wagon, paddy_wagon, patrol_wagon, wagon, black_Maria
+poncho
+pool_table, billiard_table, snooker_table
+pop_bottle, soda_bottle
+pot, flowerpot
+potter's_wheel
+power_drill
+prayer_rug, prayer_mat
+printer
+prison, prison_house
+projectile, missile
+projector
+puck, hockey_puck
+punching_bag, punch_bag, punching_ball, punchball
+purse
+quill, quill_pen
+quilt, comforter, comfort, puff
+racer, race_car, racing_car
+racket, racquet
+radiator
+radio, wireless
+radio_telescope, radio_reflector
+rain_barrel
+recreational_vehicle, RV, R.V.
+reel
+reflex_camera
+refrigerator, icebox
+remote_control, remote
+restaurant, eating_house, eating_place, eatery
+revolver, six-gun, six-shooter
+rifle
+rocking_chair, rocker
+rotisserie
+rubber_eraser, rubber, pencil_eraser
+rugby_ball
+rule, ruler
+running_shoe
+safe
+safety_pin
+saltshaker, salt_shaker
+sandal
+sarong
+sax, saxophone
+scabbard
+scale, weighing_machine
+school_bus
+schooner
+scoreboard
+screen, CRT_screen
+screw
+screwdriver
+seat_belt, seatbelt
+sewing_machine
+shield, buckler
+shoe_shop, shoe-shop, shoe_store
+shoji
+shopping_basket
+shopping_cart
+shovel
+shower_cap
+shower_curtain
+ski
+ski_mask
+sleeping_bag
+slide_rule, slipstick
+sliding_door
+slot, one-armed_bandit
+snorkel
+snowmobile
+snowplow, snowplough
+soap_dispenser
+soccer_ball
+sock
+solar_dish, solar_collector, solar_furnace
+sombrero
+soup_bowl
+space_bar
+space_heater
+space_shuttle
+spatula
+speedboat
+spider_web, spider's_web
+spindle
+sports_car, sport_car
+spotlight, spot
+stage
+steam_locomotive
+steel_arch_bridge
+steel_drum
+stethoscope
+stole
+stone_wall
+stopwatch, stop_watch
+stove
+strainer
+streetcar, tram, tramcar, trolley, trolley_car
+stretcher
+studio_couch, day_bed
+stupa, tope
+submarine, pigboat, sub, U-boat
+suit, suit_of_clothes
+sundial
+sunglass
+sunglasses, dark_glasses, shades
+sunscreen, sunblock, sun_blocker
+suspension_bridge
+swab, swob, mop
+sweatshirt
+swimming_trunks, bathing_trunks
+swing
+switch, electric_switch, electrical_switch
+syringe
+table_lamp
+tank, army_tank, armored_combat_vehicle, armoured_combat_vehicle
+tape_player
+teapot
+teddy, teddy_bear
+television, television_system
+tennis_ball
+thatch, thatched_roof
+theater_curtain, theatre_curtain
+thimble
+thresher, thrasher, threshing_machine
+throne
+tile_roof
+toaster
+tobacco_shop, tobacconist_shop, tobacconist
+toilet_seat
+torch
+totem_pole
+tow_truck, tow_car, wrecker
+toyshop
+tractor
+trailer_truck, tractor_trailer, trucking_rig, rig, articulated_lorry, semi
+tray
+trench_coat
+tricycle, trike, velocipede
+trimaran
+tripod
+triumphal_arch
+trolleybus, trolley_coach, trackless_trolley
+trombone
+tub, vat
+turnstile
+typewriter_keyboard
+umbrella
+unicycle, monocycle
+upright, upright_piano
+vacuum, vacuum_cleaner
+vase
+vault
+velvet
+vending_machine
+vestment
+viaduct
+violin, fiddle
+volleyball
+waffle_iron
+wall_clock
+wallet, billfold, notecase, pocketbook
+wardrobe, closet, press
+warplane, military_plane
+washbasin, handbasin, washbowl, lavabo, wash-hand_basin
+washer, automatic_washer, washing_machine
+water_bottle
+water_jug
+water_tower
+whiskey_jug
+whistle
+wig
+window_screen
+window_shade
+Windsor_tie
+wine_bottle
+wing
+wok
+wooden_spoon
+wool, woolen, woollen
+worm_fence, snake_fence, snake-rail_fence, Virginia_fence
+wreck
+yawl
+yurt
+web_site, website, internet_site, site
+comic_book
+crossword_puzzle, crossword
+street_sign
+traffic_light, traffic_signal, stoplight
+book_jacket, dust_cover, dust_jacket, dust_wrapper
+menu
+plate
+guacamole
+consomme
+hot_pot, hotpot
+trifle
+ice_cream, icecream
+ice_lolly, lolly, lollipop, popsicle
+French_loaf
+bagel, beigel
+pretzel
+cheeseburger
+hotdog, hot_dog, red_hot
+mashed_potato
+head_cabbage
+broccoli
+cauliflower
+zucchini, courgette
+spaghetti_squash
+acorn_squash
+butternut_squash
+cucumber, cuke
+artichoke, globe_artichoke
+bell_pepper
+cardoon
+mushroom
+Granny_Smith
+strawberry
+orange
+lemon
+fig
+pineapple, ananas
+banana
+jackfruit, jak, jack
+custard_apple
+pomegranate
+hay
+carbonara
+chocolate_sauce, chocolate_syrup
+dough
+meat_loaf, meatloaf
+pizza, pizza_pie
+potpie
+burrito
+red_wine
+espresso
+cup
+eggnog
+alp
+bubble
+cliff, drop, drop-off
+coral_reef
+geyser
+lakeside, lakeshore
+promontory, headland, head, foreland
+sandbar, sand_bar
+seashore, coast, seacoast, sea-coast
+valley, vale
+volcano
+ballplayer, baseball_player
+groom, bridegroom
+scuba_diver
+rapeseed
+daisy
+yellow_lady's_slipper, yellow_lady-slipper, Cypripedium_calceolus, Cypripedium_parviflorum
+corn
+acorn
+hip, rose_hip, rosehip
+buckeye, horse_chestnut, conker
+coral_fungus
+agaric
+gyromitra
+stinkhorn, carrion_fungus
+earthstar
+hen-of-the-woods, hen_of_the_woods, Polyporus_frondosus, Grifola_frondosa
+bolete
+ear, spike, capitulum
+toilet_tissue, toilet_paper, bathroom_tissue
