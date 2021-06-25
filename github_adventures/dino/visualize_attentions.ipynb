@@ -1,0 +1,247 @@
+{
+ "cells": [
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "1a3bd5ec",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "import ipywidgets\n",
+    "import matplotlib.pyplot as plt\n",
+    "import timm\n",
+    "import torch\n",
+    "from torchvision.datasets import ImageFolder\n",
+    "import torchvision.transforms as transforms\n",
+    "from torchvision.utils import make_grid\n",
+    "import torch.nn.functional as F"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "a6eaa0ef",
+   "metadata": {},
+   "source": [
+    "# Helpers"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "2c0b2e7c",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def get_last_attention(backbone, x):\n",
+    "    \"\"\"Get the attention weights of CLS from the last self-attention layer.\n",
+    "\n",
+    "    Very hacky!\n",
+    "\n",
+    "    Parameters\n",
+    "    ----------\n",
+    "    backbone : timm.models.vision_transformer.VisionTransformer\n",
+    "        Instantiated Vision Transformer. Note that we will in-place\n",
+    "        take the `head` attribute and replace it with `nn.Identity`.\n",
+    "\n",
+    "    x : torch.Tensor\n",
+    "        Batch of images of shape `(n_samples, 3, size, size)`.\n",
+    "\n",
+    "    Returns\n",
+    "    -------\n",
+    "    torch.Tensor\n",
+    "        Attention weights `(n_samples, n_heads, n_patches)`.\n",
+    "    \"\"\"\n",
+    "    attn_module = backbone.blocks[-1].attn\n",
+    "    n_heads = attn_module.num_heads\n",
+    "\n",
+    "    # define hook\n",
+    "    inp = None\n",
+    "    def fprehook(self, inputs):\n",
+    "        nonlocal inp\n",
+    "        inp = inputs[0]\n",
+    "\n",
+    "    # Register a hook\n",
+    "    handle = attn_module.register_forward_pre_hook(fprehook)\n",
+    "\n",
+    "    # Run forward pass\n",
+    "    _ = backbone(x)\n",
+    "    handle.remove()\n",
+    "\n",
+    "    B, N, C = inp.shape\n",
+    "    qkv = attn_module.qkv(inp).reshape(B, N, 3, n_heads, C // n_heads).permute(2, 0, 3, 1, 4)\n",
+    "    q, k, v = qkv[0], qkv[1], qkv[2]\n",
+    "\n",
+    "    attn = (q @ k.transpose(-2, -1)) * attn_module.scale\n",
+    "    attn = attn.softmax(dim=-1)\n",
+    "\n",
+    "    return attn[:, :, 0, 1:]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "57b72b84",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def threshold(attn, k=30):\n",
+    "    n_heads = len(attn)\n",
+    "    indices = attn.argsort(dim=1, descending=True)[:, k:]\n",
+    "\n",
+    "    for head in range(n_heads):\n",
+    "        attn[head, indices[head]] = 0\n",
+    "\n",
+    "    attn /= attn.sum(dim=1, keepdim=True)\n",
+    "\n",
+    "    return attn"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "59e9009d",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "def visualize_attention(img, backbone, k=30):\n",
+    "    \"\"\"Create attention image.\n",
+    "\n",
+    "    Parameteres\n",
+    "    -----------\n",
+    "    img : PIL.Image\n",
+    "        RGB image.\n",
+    "\n",
+    "    backbone : timm.models.vision_transformer.VisionTransformer\n",
+    "        The vision transformer.\n",
+    "\n",
+    "    Returns\n",
+    "    -------\n",
+    "    new_img : torch.Tensor\n",
+    "        Image of shape (n_heads, 1, height, width).\n",
+    "    \"\"\"\n",
+    "    # imply parameters\n",
+    "\n",
+    "    patch_size = backbone.patch_embed.proj.kernel_size[0]\n",
+    "\n",
+    "    transform = transforms.Compose([\n",
+    "\n",
+    "        transforms.Resize((224, 224)),\n",
+    "        transforms.ToTensor(),\n",
+    "        transforms.Normalize((0.485, 0.456, 0.406), (0.229, 0.224, 0.225)),\n",
+    "        ]\n",
+    "    )\n",
+    "\n",
+    "    device = next(backbone.parameters()).device\n",
+    "    x = transform(img)[None, ...].to(device)\n",
+    "    attn = get_last_attention(backbone, x)[0]  # (n_heads, n_patches)\n",
+    "    attn = attn / attn.sum(dim=1, keepdim=True)  # (n_heads, n_patches)\n",
+    "    attn = threshold(attn, k)\n",
+    "    attn = attn.reshape(-1, 14, 14)  # (n_heads, 14, 14)\n",
+    "    attn = F.interpolate(attn.unsqueeze(0),\n",
+    "        scale_factor=patch_size,\n",
+    "        mode=\"nearest\"\n",
+    "        )[0]\n",
+    "\n",
+    "    return attn"
+   ]
+  },
+  {
+   "cell_type": "markdown",
+   "id": "df0972ec",
+   "metadata": {},
+   "source": [
+    "# Preparation"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d6e0d987",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "models = {\n",
+    "    \"supervised\": timm.create_model(\"vit_deit_small_patch16_224\", pretrained=True),\n",
+    "    \"selfsupervised\": torch.load(\"best_model.pth\", map_location=\"cpu\").backbone,\n",
+    "}\n",
+    "dataset = ImageFolder(\"data/imagenette2-320/val\")\n",
+    "\n",
+    "colors = [\"yellow\", \"red\", \"green\", \"blue\"]"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "690e3a1f",
+   "metadata": {
+    "scrolled": false
+   },
+   "outputs": [],
+   "source": [
+    "@ipywidgets.interact\n",
+    "def _(\n",
+    "    i=ipywidgets.IntSlider(min=0, max=len(dataset) - 1, continuous_update=False),\n",
+    "    k=ipywidgets.IntSlider(min=0, max=195, value=10, continuous_update=False),\n",
+    "    model=ipywidgets.Dropdown(options=[\"supervised\", \"selfsupervised\"]),\n",
+    "):\n",
+    "    img = dataset[i][0]\n",
+    "    attns = visualize_attention(img, models[model], k=k).detach()[:].permute(1, 2, 0).numpy()\n",
+    "\n",
+    "    tform = transforms.Compose([\n",
+    "\n",
+    "        transforms.Resize((224, 224)),\n",
+    "    ])\n",
+    "    # original image\n",
+    "    plt.imshow(tform(img))\n",
+    "    plt.axis(\"off\")\n",
+    "    plt.show()\n",
+    "\n",
+    "    kwargs = {\"vmin\": 0, \"vmax\": 0.24}\n",
+    "    # Attentions\n",
+    "    n_heads = 6\n",
+    "\n",
+    "    fig, axs = plt.subplots(2, 3, figsize=(10, 7))\n",
+    "    \n",
+    "    for i in range(n_heads):\n",
+    "        ax = axs[i // 3, i % 3]\n",
+    "        ax.imshow(attns[..., i], **kwargs)\n",
+    "        ax.axis(\"off\")\n",
+    "        \n",
+    "    plt.tight_layout()\n",
+    "        \n",
+    "    plt.show()"
+   ]
+  },
+  {
+   "cell_type": "code",
+   "execution_count": null,
+   "id": "d83eae10",
+   "metadata": {},
+   "outputs": [],
+   "source": [
+    "# 3244, 1942, 3482, 688, 1509, 3709"
+   ]
+  }
+ ],
+ "metadata": {
+  "kernelspec": {
+   "display_name": "Python 3",
+   "language": "python",
+   "name": "python3"
+  },
+  "language_info": {
+   "codemirror_mode": {
+    "name": "ipython",
+    "version": 3
+   },
+   "file_extension": ".py",
+   "mimetype": "text/x-python",
+   "name": "python",
+   "nbconvert_exporter": "python",
+   "pygments_lexer": "ipython3",
+   "version": "3.8.10"
+  }
+ },
+ "nbformat": 4,
+ "nbformat_minor": 5
+}
