@@ -17,7 +17,7 @@ experiments.
 # Evaluation and pretrained models
 This repo contains multiple pretrained models inside of `pretrained/`. They
 are all `.pkl` files and they were created by pickling `solutions.Solution`
-sublclasses. To load them inside of Python run something along these lines
+subclasses. To load them inside of Python run something along these lines
 
 ```python
 import pickle
