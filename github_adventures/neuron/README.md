@@ -22,7 +22,7 @@ subclasses. To load them inside of Python run something along these lines
 ```python
 import pickle
 
-solution_path = "pretrained/invairant_ours.pkl"  # you can change this
+solution_path = "pretrained/invariant_ours.pkl"  # you can change this
 
 with open(solution_path, "rb") as f:
     solution = pickle.load(f)[0]
