@@ -1,0 +1,10 @@
+cma
+gym
+gym-cartpole-swingup
+matplotlib
+numpy
+pandas
+seaborn
+tensorboard
+torch
+tqdm
