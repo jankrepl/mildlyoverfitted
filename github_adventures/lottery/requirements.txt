@@ -1,0 +1,7 @@
+numpy
+pillow
+six
+torch
+torch-vision
+tqdm
+wandb
