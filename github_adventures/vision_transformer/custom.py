@@ -214,8 +214,8 @@ class MLP(nn.Module):
         ) # (n_samples, n_patches + 1, hidden_features)
         x = self.act(x)  # (n_samples, n_patches + 1, hidden_features)
         x = self.drop(x)  # (n_samples, n_patches + 1, hidden_features)
-        x = self.fc2(x)  # (n_samples, n_patches + 1, hidden_features)
-        x = self.drop(x)  # (n_samples, n_patches + 1, hidden_features)
+        x = self.fc2(x)  # (n_samples, n_patches + 1, out_features)
+        x = self.drop(x)  # (n_samples, n_patches + 1, out_features)
 
         return x
 
