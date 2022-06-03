@@ -241,7 +241,7 @@ class MultiCropWrapper(nn.Module):
     """
     def __init__(self, backbone, new_head):
         super().__init__()
-        backbone.head = nn.Identity()  # desactivate original head
+        backbone.head = nn.Identity()  # deactivate original head
         self.backbone = backbone
         self.new_head = new_head
 
