@@ -2,7 +2,7 @@
 
 Run the following to get all the dependencies.
 ```
-pip install -r requirements.txt`
+pip install -r requirements.txt
 ```
 
 # Custom PQ implementation
