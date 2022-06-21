@@ -1,0 +1,5 @@
+faiss-cpu==1.7.2
+gradio==3.0.17
+numpy==1.22.4
+pandas==1.4.2
+scikit-learn==1.1.1
