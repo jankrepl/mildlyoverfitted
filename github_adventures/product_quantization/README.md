@@ -5,6 +5,9 @@ Run the following to get all the dependencies.
 pip install -r requirements.txt
 ```
 
+# Faiss 101
+The code for the short intro to FAISS can be found in `faiss_101_ipython.py`.
+
 # Custom PQ implementation
 The custom PQ implementation can be found inside of `custom.py`.
 
