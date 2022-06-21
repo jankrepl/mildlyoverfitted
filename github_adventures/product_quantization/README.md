@@ -7,6 +7,8 @@ pip install -r requirements.txt
 
 # Faiss 101
 The code for the short intro to FAISS can be found in `faiss_101_ipython.py`.
+Note that you can use `parse.py` to turn the raw fasttext embeddings
+into a numpy array. See `run_all.sh` for example usage.
 
 # Custom PQ implementation
 The custom PQ implementation can be found inside of `custom.py`.
