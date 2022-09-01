@@ -1,0 +1,3 @@
+-e git+ssh://git@github.com/deepmind/dm-haiku.git@386efc098fd52a5cf728e7d13442138ab25eb235#egg=dm_haiku
+jax==0.3.5
+jaxlib==0.3.5
