@@ -20,11 +20,11 @@ class ParityDataset(Dataset):
     """
 
     def __init__(
-        self,
-        n_samples,
-        n_elems,
-        n_nonzero_min=None,
-        n_nonzero_max=None,
+            self,
+            n_samples,
+            n_elems,
+            n_nonzero_min=None,
+            n_nonzero_max=None,
     ):
         self.n_samples = n_samples
         self.n_elems = n_elems
@@ -91,7 +91,7 @@ class PonderNet(nn.Module):
     """
 
     def __init__(
-        self, n_elems, n_hidden=64, max_steps=20, allow_halting=False
+            self, n_elems, n_hidden=64, max_steps=20, allow_halting=False
     ):
         super().__init__()
 
@@ -151,8 +151,8 @@ class PonderNet(nn.Module):
                 lambda_n = x.new_ones(batch_size)  # (batch_size,)
             else:
                 lambda_n = torch.sigmoid(self.lambda_layer(h))[
-                    :, 0
-                ]  # (batch_size,)
+                           :, 0
+                           ]  # (batch_size,)
 
             # Store releavant outputs
             y_list.append(self.output_layer(h)[:, 0])  # (batch_size,)

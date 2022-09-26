@@ -19,6 +19,7 @@ class DatasetImages(Dataset):
     all_paths : list
         List of all paths to the `.jpg` images.
     """
+
     def __init__(self, path, transform=None):
         super().__init__()
 
@@ -37,7 +38,6 @@ class DatasetImages(Dataset):
             img = self.transform(img)
 
         return img
-
 
 
 class Generator(nn.Module):
@@ -125,6 +125,7 @@ class Discriminator(nn.Module):
         If the input parameter `augment_module` provided then this is the
         same thing. If not, then this is just an identity mapping.
     """
+
     def __init__(self, ndf=16, augment_module=None):
         super().__init__()
         self.main = nn.Sequential(
@@ -156,7 +157,6 @@ class Discriminator(nn.Module):
             self.augment_module = augment_module
         else:
             self.augment_module = nn.Identity()
-
 
     def forward(self, x):
         """Run the forward pass.

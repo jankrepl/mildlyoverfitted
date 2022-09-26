@@ -4,9 +4,8 @@ import pathlib
 import pickle
 
 from gym.wrappers import Monitor
-import matplotlib.pyplot as plt
 
-from tasks import IncompatibleNFeatures, Task
+from tasks import Task
 
 
 def main(argv=None):
@@ -67,6 +66,7 @@ def main(argv=None):
                     f"videos/{model_name}/{shuffle}/{episode_ix}/",
                 )
                 reward = task.rollout(solution_inst)
+
 
 if __name__ == "__main__":
     main()

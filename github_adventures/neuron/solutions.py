@@ -169,10 +169,10 @@ class PermutationInvariantSolution(Solution):
     """
 
     def __init__(
-        self,
-        n_embeddings=16,
-        proj_dim=32,
-        hidden_size=8,
+            self,
+            n_embeddings=16,
+            proj_dim=32,
+            hidden_size=8,
     ):
         self.kwargs = {
             "n_embeddings": n_embeddings,

@@ -29,9 +29,9 @@ class CAModel(nn.Module):
     filters : torch.Tensor
         Constant tensor of shape `(3 * n_channels, 1, 3, 3)`.
     """
+
     def __init__(self, n_channels=16, hidden_channels=128, fire_rate=0.5, device=None):
         super().__init__()
-
 
         self.fire_rate = 0.5
         self.n_channels = n_channels
@@ -44,35 +44,35 @@ class CAModel(nn.Module):
         sobel_filter_x = sobel_filter_ / scalar
         sobel_filter_y = sobel_filter_.t() / scalar
         identity_filter = torch.tensor(
-                [
-                    [0, 0, 0],
-                    [0, 1, 0],
-                    [0, 0, 0],
-                ],
-                dtype=torch.float32,
+            [
+                [0, 0, 0],
+                [0, 1, 0],
+                [0, 0, 0],
+            ],
+            dtype=torch.float32,
         )
         filters = torch.stack(
-                [identity_filter, sobel_filter_x, sobel_filter_y]
+            [identity_filter, sobel_filter_x, sobel_filter_y]
         )  # (3, 3, 3)
         filters = filters.repeat((n_channels, 1, 1))  # (3 * n_channels, 3, 3)
         self.filters = filters[:, None, ...].to(
-                self.device
+            self.device
         )  # (3 * n_channels, 1, 3, 3)
 
         # Update step
         self.update_module = nn.Sequential(
-                nn.Conv2d(
-                    3 * n_channels,
-                    hidden_channels,
-                    kernel_size=1,  # (1, 1)
-                ),
-                nn.ReLU(),
-                nn.Conv2d(
-                    hidden_channels,
-                    n_channels,
-                    kernel_size=1,
-                    bias=False,
-                ),
+            nn.Conv2d(
+                3 * n_channels,
+                hidden_channels,
+                kernel_size=1,  # (1, 1)
+            ),
+            nn.ReLU(),
+            nn.Conv2d(
+                hidden_channels,
+                n_channels,
+                kernel_size=1,
+                bias=False,
+            ),
         )
 
         with torch.no_grad():
@@ -158,10 +158,10 @@ class CAModel(nn.Module):
             dtype is bool.
         """
         return (
-            nn.functional.max_pool2d(
-                x[:, 3:4, :, :], kernel_size=3, stride=1, padding=1
-            )
-            > 0.1
+                nn.functional.max_pool2d(
+                    x[:, 3:4, :, :], kernel_size=3, stride=1, padding=1
+                )
+                > 0.1
         )
 
     def forward(self, x):

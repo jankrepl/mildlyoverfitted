@@ -21,7 +21,7 @@ def from_faiss(faiss_index: faiss.swigfaiss.IndexPQ) -> CustomIndexPQ:
     d = faiss_index.d
     m = faiss_index.code_size
     nbits = faiss_index.pq.nbits
-    k = 2**nbits
+    k = 2 ** nbits
     ntotal = faiss_index.ntotal
 
     custom_index = CustomIndexPQ(d=d, m=m, nbits=nbits)

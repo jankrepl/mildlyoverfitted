@@ -2,9 +2,9 @@ import argparse
 import logging
 
 import torch
+from transformers import AutoModelForCausalLM, AutoTokenizer
 
 from model import GPT
-from transformers import AutoModelForCausalLM, AutoTokenizer
 from utils import copy_model, generate_token
 
 logging.basicConfig(format="[%(levelname)s] %(asctime)s %(message)s")

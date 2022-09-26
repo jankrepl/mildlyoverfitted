@@ -30,6 +30,7 @@ def func(inp, net=None, target=None):
 
     return logit
 
+
 def compute_integrated_gradients(inp, baseline, net, target, n_steps=100):
     """Compute integrated gradients.
 
@@ -65,6 +66,7 @@ def compute_integrated_gradients(inp, baseline, net, target, n_steps=100):
 
     return ig, grads[-1]
 
+
 if __name__ == "__main__":
     net = models.resnet18(pretrained=True)
     net.eval()
@@ -76,13 +78,13 @@ if __name__ == "__main__":
     baseline = -1.5 * torch.ones_like(tensor)
 
     ig, inp_grad = compute_integrated_gradients(
-            tensor, baseline, net, 291, n_steps=n_steps
+        tensor, baseline, net, 291, n_steps=n_steps
     )
 
     ig_scaled = scale_grad(ig)
     inp_grad_scaled = scale_grad(inp_grad)
 
-    _, (ax_baseline, ax_img, ax_inp_grad, ax_ig) = plt.subplots(1, 4, figsize=(19.20,10.80))
+    _, (ax_baseline, ax_img, ax_inp_grad, ax_ig) = plt.subplots(1, 4, figsize=(19.20, 10.80))
 
     ax_baseline.imshow(to_array(baseline))
     ax_img.imshow(arr)

@@ -3,8 +3,8 @@ from collections import Counter, defaultdict
 import numpy as np
 import pandas as pd
 import torch
-from torch.nn import Embedding, Linear, LSTM, Module
 import torch.nn.functional as F
+from torch.nn import Embedding, Linear, LSTM, Module
 from torch.utils.data import Dataset, DataLoader, SubsetRandomSampler
 from tqdm import tqdm
 
@@ -38,6 +38,7 @@ class CharacterDataset(Dataset):
     vocabulary : list
         List of all characters. `len(vocabulary) == vocab_size`.
     """
+
     def __init__(self, text, window_size=1, vocab_size=50):
         self.text = text.replace("\n", " ")
         self.window_size = window_size
@@ -58,7 +59,7 @@ class CharacterDataset(Dataset):
 
     def __getitem__(self, ix):
         X = torch.LongTensor(
-            [self.ch2ix[c] for c in self.text[ix : ix + self.window_size]]
+            [self.ch2ix[c] for c in self.text[ix: ix + self.window_size]]
         )
         y = self.ch2ix[self.text[ix + self.window_size]]
 
@@ -89,30 +90,30 @@ class Network(Module):
     n_layers : int
         Number of the layers of the LSTM.
     """
+
     def __init__(
-        self,
-        vocab_size,
-        embedding_dim=2,
-        dense_dim=32,
-        hidden_dim=8,
-        max_norm=2,
-        n_layers=1,
+            self,
+            vocab_size,
+            embedding_dim=2,
+            dense_dim=32,
+            hidden_dim=8,
+            max_norm=2,
+            n_layers=1,
     ):
         super().__init__()
 
         self.embedding = Embedding(
-                vocab_size,
-                embedding_dim,
-                padding_idx=vocab_size - 1,
-                norm_type=2,
-                max_norm=max_norm,
+            vocab_size,
+            embedding_dim,
+            padding_idx=vocab_size - 1,
+            norm_type=2,
+            max_norm=max_norm,
         )
         self.lstm = LSTM(
-                embedding_dim, hidden_dim, batch_first=True, num_layers=n_layers
+            embedding_dim, hidden_dim, batch_first=True, num_layers=n_layers
         )
         self.linear_1 = Linear(hidden_dim, dense_dim)
         self.linear_2 = Linear(dense_dim, vocab_size)
-
 
     def forward(self, x, h=None, c=None):
         """Run the forward pass.
@@ -146,6 +147,7 @@ class Network(Module):
 
         return logits, h, c
 
+
 def compute_loss(cal, net, dataloader):
     """Computer average loss over a dataset."""
     net.eval()
@@ -156,6 +158,7 @@ def compute_loss(cal, net, dataloader):
         all_losses.append(cal(probs, y_batch).item())
 
     return np.mean(all_losses)
+
 
 def generate_text(n_chars, net, dataset, initial_text="Hello", random_state=None):
     """Generate text with the character-level model.
@@ -202,6 +205,7 @@ def generate_text(n_chars, net, dataset, initial_text="Hello", random_state=None
 
     return res
 
+
 if __name__ == "__main__":
     with open("text.txt", "r") as f:
         text = "\n".join(f.readlines())
@@ -232,23 +236,23 @@ if __name__ == "__main__":
     train_indices, val_indices = np.arange(split_ix), np.arange(split_ix, n_samples)
 
     train_dataloader = DataLoader(
-            dataset, sampler=SubsetRandomSampler(train_indices), batch_size=batch_size
+        dataset, sampler=SubsetRandomSampler(train_indices), batch_size=batch_size
     )
     val_dataloader = DataLoader(
-            dataset, sampler=SubsetRandomSampler(val_indices), batch_size=batch_size
+        dataset, sampler=SubsetRandomSampler(val_indices), batch_size=batch_size
     )
 
     net = Network(
-            vocab_size,
-            hidden_dim=hidden_dim,
-            n_layers=n_layers,
-            dense_dim=dense_dim,
-            embedding_dim=embedding_dim,
-            max_norm=max_norm,
+        vocab_size,
+        hidden_dim=hidden_dim,
+        n_layers=n_layers,
+        dense_dim=dense_dim,
+        embedding_dim=embedding_dim,
+        max_norm=max_norm,
     )
     optimizer = torch.optim.Adam(
-            net.parameters(),
-            lr=1e-2,
+        net.parameters(),
+        lr=1e-2,
     )
 
     emb_history = []

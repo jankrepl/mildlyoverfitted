@@ -49,14 +49,14 @@ class Block(nn.Module):
     """
 
     def __init__(
-        self,
-        *,
-        n_embd,
-        n_head,
-        n_positions,
-        attn_pdrop,
-        resid_pdrop,
-        layer_norm_epsilon,
+            self,
+            *,
+            n_embd,
+            n_head,
+            n_positions,
+            attn_pdrop,
+            resid_pdrop,
+            layer_norm_epsilon,
     ):
         super().__init__()
 
@@ -166,17 +166,17 @@ class GPT(nn.Module):
     """
 
     def __init__(
-        self,
-        *,
-        vocab_size,
-        n_layer,
-        n_embd,
-        n_head,
-        n_positions,
-        attn_pdrop,
-        embd_pdrop,
-        resid_pdrop,
-        layer_norm_epsilon,
+            self,
+            *,
+            vocab_size,
+            n_layer,
+            n_embd,
+            n_head,
+            n_positions,
+            attn_pdrop,
+            embd_pdrop,
+            resid_pdrop,
+            layer_norm_epsilon,
     ):
         super().__init__()
         self.n_positions = n_positions

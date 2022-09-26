@@ -14,7 +14,8 @@ def foo(x: jnp.ndarray) -> jnp.ndarray:
     hk.set_state("counter", counter + 1)
     res = c + x + counter
 
-    return res 
+    return res
+
 
 foo_transformed = hk.transform_with_state(foo)
 init_key = jax.random.PRNGKey(32)
@@ -28,4 +29,3 @@ for i in range(2):
     res, state = foo_transformed.apply(params, state, None, x)
     print(state)
     print(res)
-

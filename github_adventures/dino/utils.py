@@ -33,12 +33,13 @@ class DataAugmentation:
         Local transform. Note that the augmentation is stochastic so one
         instance is enough and will lead to different crops.
     """
+
     def __init__(
-        self,
-        global_crops_scale=(0.4, 1),
-        local_crops_scale=(0.05, 0.4),
-        n_local_crops=8,
-        size=224,
+            self,
+            global_crops_scale=(0.4, 1),
+            local_crops_scale=(0.05, 0.4),
+            n_local_crops=8,
+            size=224,
     ):
         self.n_local_crops = n_local_crops
         RandomGaussianBlur = lambda p: transforms.RandomApply(  # noqa
@@ -171,13 +172,13 @@ class Head(nn.Module):
     """
 
     def __init__(
-        self,
-        in_dim,
-        out_dim,
-        hidden_dim=512,
-        bottleneck_dim=256,
-        n_layers=3,
-        norm_last_layer=False,
+            self,
+            in_dim,
+            out_dim,
+            hidden_dim=512,
+            bottleneck_dim=256,
+            n_layers=3,
+            norm_last_layer=False,
     ):
         super().__init__()
         if n_layers == 1:
@@ -239,6 +240,7 @@ class MultiCropWrapper(nn.Module):
     new_head : Head
         New head that is going to be put on top of the `backbone`.
     """
+
     def __init__(self, backbone, new_head):
         super().__init__()
         backbone.head = nn.Identity()  # deactivate original head
@@ -290,8 +292,9 @@ class Loss(nn.Module):
         Hyperparameter for the exponential moving average that determines
         the center logits. The higher the more the running average matters.
     """
+
     def __init__(
-        self, out_dim, teacher_temp=0.04, student_temp=0.1, center_momentum=0.9
+            self, out_dim, teacher_temp=0.04, student_temp=0.1, center_momentum=0.9
     ):
         super().__init__()
         self.student_temp = student_temp
@@ -354,8 +357,9 @@ class Loss(nn.Module):
             dim=0, keepdim=True
         )  # (1, out_dim)
         self.center = self.center * self.center_momentum + batch_center * (
-            1 - self.center_momentum
+                1 - self.center_momentum
         )
+
 
 def clip_gradients(model, clip=2.0):
     """Rescale norm of computed gradients.

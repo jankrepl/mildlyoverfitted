@@ -1,7 +1,8 @@
-from PIL import Image
 import torch
+from PIL import Image
 from torchvision.transforms import (CenterCrop, Compose, Normalize, Resize,
                                     ToTensor)
+
 
 def compute_gradient(func, inp, **kwargs):
     """Compute the gradient with respect to `inp`.
@@ -61,6 +62,7 @@ def read_image(path):
 
     return tensor
 
+
 def to_array(tensor):
     """Convert torch.Tensor to np.ndarray.
 
@@ -85,6 +87,7 @@ def to_array(tensor):
     arr = arr_.permute(1, 2, 0).detach().numpy()
 
     return arr
+
 
 def scale_grad(grad):
     """Scale gradient tensor.

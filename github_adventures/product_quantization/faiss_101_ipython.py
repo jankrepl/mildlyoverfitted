@@ -1,5 +1,5 @@
-import numpy as np
 import faiss
+import numpy as np
 
 # Load fast text embeddings
 embs = np.load("parsed_fasttext/embs.npy")  # change path if necessary

@@ -112,10 +112,10 @@ class CustomDataset(Dataset):
 
 
 def generate_spirals(
-    n_samples,
-    noise_std=0.05,
-    n_cycles=2,
-    random_state=None,
+        n_samples,
+        noise_std=0.05,
+        n_cycles=2,
+        random_state=None,
 ):
     """Generate two spirals dataset.
 
@@ -182,11 +182,11 @@ def generate_spirals(
 
 
 def generate_prediction_img(
-    model,
-    X_train,
-    X_test,
-    y_train,
-    y_test,
+        model,
+        X_train,
+        X_test,
+        y_train,
+        y_test,
 ):
     """Generate contour and scatter plots with predictions.
 

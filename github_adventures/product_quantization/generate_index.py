@@ -13,7 +13,6 @@ from custom import CustomIndexPQ
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
-
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "input_path",
@@ -71,6 +70,6 @@ logger.info(f"Writing index to disk - {args.output_path}")
 if args.index_type == "our-pq":
     with args.output_path.open("wb") as f:
         pickle.dump(index, f)
-    
+
 else:
     faiss.write_index(index, str(args.output_path))

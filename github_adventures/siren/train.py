@@ -1,12 +1,11 @@
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
+import tqdm
 from torch.nn import Linear, ReLU, Sequential
 from torch.utils.data import DataLoader
-import tqdm
 
 from core import GradientUtils, ImageSiren, PixelDataset
-
 
 # Image loading
 img_ = plt.imread("dog.png")
@@ -27,7 +26,6 @@ hidden_features = 256
 hidden_layers = 3
 
 target = "intensity"  # "intensity", "grad", "laplace"
-
 
 # Model creation
 if model_name == "siren":
@@ -86,7 +84,6 @@ for e in range(n_epochs):
             raise ValueError("Unrecognized target")
 
         losses.append(loss.item())
-
 
         optim.zero_grad()
         loss.backward()

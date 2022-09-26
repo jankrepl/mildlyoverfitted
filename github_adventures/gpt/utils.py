@@ -87,7 +87,7 @@ def copy_model(model_official, model_ours):
 
 @torch.no_grad()
 def generate_token(
-    model, token_ixs, temperature=1.0, sample=False, top_k=None
+        model, token_ixs, temperature=1.0, sample=False, top_k=None
 ):
     """Generate a single token given previous tokens.
 
@@ -115,10 +115,10 @@ def generate_token(
     new_token_ix : int
         Index of the new token.
     """
-    context_token_ixs = token_ixs[-model.n_positions :]
+    context_token_ixs = token_ixs[-model.n_positions:]
     ixs = torch.tensor(context_token_ixs).to(dtype=torch.long)[
-        None, :
-    ]  # (1, n_tokens)
+          None, :
+          ]  # (1, n_tokens)
 
     logits_all = model(ixs)  # (1, n_tokens, vocab_size)
     logits = logits_all[0, -1, :]  # (vocab_size,)

@@ -142,7 +142,7 @@ def main():
 
     for e in range(args.n_epochs):
         for i, (images, _) in tqdm.tqdm(
-            enumerate(data_loader_train_aug), total=n_batches
+                enumerate(data_loader_train_aug), total=n_batches
         ):
             if n_steps % args.logging_freq == 0:
                 student.eval()
@@ -187,7 +187,7 @@ def main():
 
             with torch.no_grad():
                 for student_ps, teacher_ps in zip(
-                    student.parameters(), teacher.parameters()
+                        student.parameters(), teacher.parameters()
                 ):
                     teacher_ps.data.mul_(args.momentum_teacher)
                     teacher_ps.data.add_(

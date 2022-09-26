@@ -37,10 +37,10 @@ class CustomDataset(Dataset):
     """
 
     def __init__(
-        self,
-        raw_sequences,
-        sequence_len=80,
-        max_value=2000,
+            self,
+            raw_sequences,
+            sequence_len=80,
+            max_value=2000,
     ):
         filtered_sequences = list(
             filter(
@@ -110,12 +110,12 @@ class Network(nn.Module):
     """
 
     def __init__(
-        self,
-        max_value=2000,
-        embedding_dim=100,
-        n_layers=2,
-        hidden_dim=64,
-        dense_dim=256,
+            self,
+            max_value=2000,
+            embedding_dim=100,
+            n_layers=2,
+            hidden_dim=64,
+            dense_dim=256,
     ):
         super().__init__()
 

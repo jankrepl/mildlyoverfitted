@@ -16,7 +16,6 @@ import pandas as pd
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
 
-
 parser = argparse.ArgumentParser()
 parser.add_argument(
     "exact_index_path",
@@ -37,13 +36,14 @@ parser.add_argument(
 
 args = parser.parse_args()
 
+
 def run(
-    word: str,
-    k: int,
-    exact_index,
-    approximate_indexes: dict[str, Any],
-    words: list[str],
-    word2ix: dict[str, int],
+        word: str,
+        k: int,
+        exact_index,
+        approximate_indexes: dict[str, Any],
+        words: list[str],
+        word2ix: dict[str, int],
 ) -> tuple[pd.DataFrame, pd.DataFrame, dict[str, float]]:
     metrics = {}
 
@@ -123,7 +123,7 @@ demo = gr.Interface(
         gr.DataFrame(label="exact"),
         *[gr.DataFrame(label=name) for name in approximate_indexes.keys()],
         gr.JSON(label="metrics"),
-        ],
+    ],
     allow_flagging="never",
 
 )

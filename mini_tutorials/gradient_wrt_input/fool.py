@@ -5,6 +5,7 @@ import torchvision.models as models
 
 from utils import compute_gradient, read_image, to_array
 
+
 def func(inp, net=None, target=None):
     """Compute negative log likelihood.
 
@@ -29,6 +30,7 @@ def func(inp, net=None, target=None):
 
     print(f"Loss: {loss.item()}")
     return loss
+
 
 def attack(tensor, net, eps=1e-3, n_iter=50):
     """Run the Fast Sign Gradient Method (FSGM) attack.
@@ -62,8 +64,8 @@ def attack(tensor, net, eps=1e-3, n_iter=50):
         net.zero_grad()
 
         grad = compute_gradient(
-                func, new_tensor, net=net, target=orig_prediction.item()
-                )
+            func, new_tensor, net=net, target=orig_prediction.item()
+        )
         new_tensor = torch.clamp(new_tensor + eps * grad.sign(), -2, 2)
         new_prediction = net(new_tensor).argmax()
 
@@ -82,10 +84,10 @@ if __name__ == "__main__":
     tensor = read_image("img.jpg")
 
     new_tensor, orig_prediction, new_prediction = attack(
-            tensor, net, eps=1e-3, n_iter=100
-            )
+        tensor, net, eps=1e-3, n_iter=100
+    )
 
-    _, (ax_orig, ax_new, ax_diff) = plt.subplots(1, 3, figsize=(19.20,10.80))
+    _, (ax_orig, ax_new, ax_diff) = plt.subplots(1, 3, figsize=(19.20, 10.80))
     arr = to_array(tensor)
     new_arr = to_array(new_tensor)
     diff_arr = np.abs(arr - new_arr).mean(axis=-1)

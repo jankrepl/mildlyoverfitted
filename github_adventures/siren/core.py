@@ -60,6 +60,7 @@ class SineLayer(nn.Module):
     linear : nn.Linear
         Linear layer.
     """
+
     def __init__(
             self,
             in_features,
@@ -93,6 +94,7 @@ class SineLayer(nn.Module):
         """
         return torch.sin(self.omega * self.linear(x))
 
+
 class ImageSiren(nn.Module):
     """Network composed of SineLayers.
 
@@ -116,6 +118,7 @@ class ImageSiren(nn.Module):
     net : nn.Sequential
         Sequential collection of `SineLayer` and `nn.Linear` at the end.
     """
+
     def __init__(
             self,
             hidden_features,
@@ -123,30 +126,30 @@ class ImageSiren(nn.Module):
             first_omega=30,
             hidden_omega=30,
             custom_init_function_=None,
-            ):
+    ):
         super().__init__()
         in_features = 2
         out_features = 1
 
         net = []
         net.append(
-                SineLayer(
-                    in_features,
-                    hidden_features,
-                    is_first=True,
-                    custom_init_function_=custom_init_function_,
-                    omega=first_omega,
+            SineLayer(
+                in_features,
+                hidden_features,
+                is_first=True,
+                custom_init_function_=custom_init_function_,
+                omega=first_omega,
             )
         )
 
         for _ in range(hidden_layers):
             net.append(
-                    SineLayer(
-                        hidden_features,
-                        hidden_features,
-                        is_first=False,
-                        custom_init_function_=custom_init_function_,
-                        omega=hidden_omega,
+                SineLayer(
+                    hidden_features,
+                    hidden_features,
+                    is_first=False,
+                    custom_init_function_=custom_init_function_,
+                    omega=hidden_omega,
                 )
             )
 
@@ -158,7 +161,6 @@ class ImageSiren(nn.Module):
 
         net.append(final_linear)
         self.net = nn.Sequential(*net)
-
 
     def forward(self, x):
         """Run forward pass.
@@ -195,6 +197,7 @@ def generate_coordinates(n):
 
     return coords_abs
 
+
 class PixelDataset(Dataset):
     """Dataset yielding coordinates, intensitives and (higher) derivatives.
 
@@ -223,6 +226,7 @@ class PixelDataset(Dataset):
     laplace : np.ndarray
         Array of shape `(size, size)` representing the approximate laplace operator.
     """
+
     def __init__(self, img):
         if not (img.ndim == 2 and img.shape[0] == img.shape[1]):
             raise ValueError("Only 2D square images are supported.")
@@ -303,7 +307,7 @@ class GradientUtils:
         for i in range(coords.shape[1]):
             div += torch.autograd.grad(
                 grad[..., i], coords, torch.ones_like(grad[..., i]), create_graph=True,
-            )[0][..., i : i + 1]
+            )[0][..., i: i + 1]
         return div
 
     @staticmethod

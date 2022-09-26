@@ -5,6 +5,7 @@ import torch.nn.functional as F
 from torch.nn import Linear, Module
 from torch.utils.tensorboard import SummaryWriter
 
+
 class Network(Module):
     def __init__(self):
         super().__init__()
@@ -12,7 +13,6 @@ class Network(Module):
         self.fc_1 = Linear(10, 20)
         self.fc_2 = Linear(20, 30)
         self.fc_3 = Linear(30, 2)
-
 
     def forward(self, x):
         x = self.fc_1(x)
@@ -23,12 +23,14 @@ class Network(Module):
 
         return x
 
+
 if __name__ == "__main__":
     log_dir = pathlib.Path.cwd() / "tensorboard_logs"
     writer = SummaryWriter(log_dir)
 
     x = torch.rand(1, 10)
     net = Network()
+
 
     def activation_hook(inst, inp, out):
         """Run activation hook.
@@ -44,6 +46,7 @@ if __name__ == "__main__":
         """
         print("Here")
         writer.add_histogram(repr(inst), out)
+
 
     handle_1 = net.fc_1.register_forward_hook(activation_hook)
     net.fc_2.register_forward_hook(activation_hook)

@@ -198,8 +198,8 @@ def main(argv=None):
                     logits_test = model(X_test_t).squeeze().detach().cpu()
 
                 acc_test = (
-                    torch.sigmoid(logits_test).round().numpy() == y_test
-                ).sum() / len(y_test)
+                                   torch.sigmoid(logits_test).round().numpy() == y_test
+                           ).sum() / len(y_test)
                 loss_test = loss_fn(logits_test, torch.from_numpy(y_test))
 
                 writer.add_scalar("loss_test", loss_test, n_steps)

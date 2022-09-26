@@ -5,6 +5,7 @@ import numpy as np
 import torch
 from transformers import AutoModelForMaskedLM, AutoTokenizer
 
+
 def get_top_k(sequence, tokenizer, model, k=10):
     """Get the top k most probable tokens to fill the gap with.
 
@@ -34,6 +35,7 @@ def get_top_k(sequence, tokenizer, model, k=10):
     top_vocab_indices = torch.topk(logits[0, mask_ix.item(), :], k)[1]
 
     return top_vocab_indices
+
 
 if __name__ == "__main__":
     logging.disable(logging.WARNING)

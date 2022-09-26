@@ -1,6 +1,7 @@
 import numpy as np
 import pytest
 
+
 def get_arrays():
     """Create 4 arrays that are all similar but different.
 
@@ -35,6 +36,7 @@ def test___eq__():
     with pytest.raises(ValueError):
         assert a == a
 
+
 def test___eq__all():
     a, a_eps, a_dim, a_nan = get_arrays()
 
@@ -42,6 +44,7 @@ def test___eq__all():
     assert not (a == a_eps).all()
     assert (a == a_dim).all()
     assert not (a_nan == a_nan).all()
+
 
 def test_array_equal():
     a, a_eps, a_dim, a_nan = get_arrays()
@@ -64,6 +67,7 @@ def test_allclose():
     assert not np.allclose(a_nan, a_nan, atol=atol)
     assert np.allclose(a_nan, a_nan, atol=atol, equal_nan=True)
 
+
 def test_testing_array_equal():
     a, a_eps, a_dim, a_nan = get_arrays()
 
@@ -71,6 +75,7 @@ def test_testing_array_equal():
     # np.testing.assert_array_equal(a, a_eps)
     # np.testing.assert_array_equal(a, a_dim)
     np.testing.assert_array_equal(a_nan, a_nan)
+
 
 def test_testing_allclose():
     a, a_eps, a_dim, a_nan = get_arrays()

@@ -42,7 +42,6 @@ class MLP(nn.Module):
         for p in self.parameters():
             p.requires_grad = False
 
-
     def forward(self, obs):
         """Run forward pass.
 
@@ -192,10 +191,10 @@ class AttentionNeuron(nn.Module):
     """
 
     def __init__(
-        self,
-        n_embeddings=16,
-        proj_dim=32,
-        hidden_size=8,
+            self,
+            n_embeddings=16,
+            proj_dim=32,
+            hidden_size=8,
     ):
         super().__init__()
         self.n_embeddings = n_embeddings
@@ -302,10 +301,10 @@ class PermutationInvariantNetwork(nn.Module):
     """
 
     def __init__(
-        self,
-        n_embeddings=16,
-        proj_dim=32,
-        hidden_size=8,
+            self,
+            n_embeddings=16,
+            proj_dim=32,
+            hidden_size=8,
     ):
         super().__init__()
 

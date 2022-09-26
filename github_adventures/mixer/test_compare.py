@@ -15,13 +15,13 @@ from ours import MlpMixer as OurMixer
 @pytest.mark.parametrize("tokens_mlp_dim", [2, 4])
 @pytest.mark.parametrize("channels_mlp_dim", [3, 6])
 def test_compare(
-    image_size,
-    patch_size,
-    hidden_dim,
-    n_blocks,
-    n_classes,
-    tokens_mlp_dim,
-    channels_mlp_dim,
+        image_size,
+        patch_size,
+        hidden_dim,
+        n_blocks,
+        n_classes,
+        tokens_mlp_dim,
+        channels_mlp_dim,
 ):
     # Create Flax model
     model_flax = OfficialMixer(

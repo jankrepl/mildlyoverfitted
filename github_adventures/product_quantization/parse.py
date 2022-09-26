@@ -4,9 +4,9 @@ import argparse
 import io
 import logging
 import pathlib
-import tqdm
 
 import numpy as np
+import tqdm
 
 logger = logging.getLogger(__name__)
 logging.basicConfig(level=logging.INFO)
@@ -28,8 +28,9 @@ def get_embeddings(path: str, maximum: int | None = None) -> tuple[list[str], np
 
         words.append(tokens[0])
         embs[i] = list(map(float, tokens[1:]))
-    
+
     return words, embs
+
 
 parser = argparse.ArgumentParser()
 parser.add_argument(
@@ -63,7 +64,6 @@ logger.info("Saving words")
 with path_words.open("w") as f:
     for word in words:
         f.write(word + "\n")
-    
+
 logger.info("Saving embeddings")
 np.save(path_embs, embs)
-

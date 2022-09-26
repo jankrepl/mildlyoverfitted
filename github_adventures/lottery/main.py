@@ -3,9 +3,9 @@ import argparse
 import torch
 import torch.nn as nn
 import tqdm
+import wandb
 from torch.utils.data import DataLoader
 
-import wandb
 from data import MNISTDataset
 from utils import MLP, compute_stats, copy_weights_mlp, prune_mlp, reinit_mlp
 
@@ -32,13 +32,13 @@ def loop_dataloader(dataloader):
 
 
 def train(
-    model,
-    dataloader_train,
-    loss_inst,
-    optimizer,
-    max_iter=10_000,
-    dataloader_val=None,
-    val_freq=500,
+        model,
+        dataloader_train,
+        loss_inst,
+        optimizer,
+        max_iter=10_000,
+        dataloader_val=None,
+        val_freq=500,
 ):
     """Run the training loop.
 
@@ -219,7 +219,7 @@ def main(argv=None):
     # Train and prune loop
     if args.prune_ratio > 0:
         per_round_prune_ratio = 1 - (1 - args.prune_ratio) ** (
-            1 / args.prune_iter
+                1 / args.prune_iter
         )
 
         per_round_prune_ratios = [per_round_prune_ratio] * len(mlp.module_list)

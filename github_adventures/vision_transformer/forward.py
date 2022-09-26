@@ -1,6 +1,6 @@
 import numpy as np
-from PIL import Image
 import torch
+from PIL import Image
 
 k = 10
 

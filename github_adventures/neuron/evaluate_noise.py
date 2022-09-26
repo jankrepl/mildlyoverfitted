@@ -7,7 +7,7 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
-from tasks import IncompatibleNFeatures, Task
+from tasks import Task
 
 
 def main(argv=None):

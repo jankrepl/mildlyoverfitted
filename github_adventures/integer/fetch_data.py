@@ -2,7 +2,6 @@ import pathlib
 import pickle
 
 import requests
-
 from joblib import Parallel, delayed, parallel_backend
 
 
@@ -54,4 +53,3 @@ if __name__ == "__main__":
 
     with output_path.open("wb") as f:
         pickle.dump(res, f)
-

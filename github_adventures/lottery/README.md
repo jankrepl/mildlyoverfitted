@@ -1,10 +1,13 @@
 # The Lottery Ticket Hypothesis
+
 ## Installation
+
 ```bash
 pip install -r requirements.txt
 ```
 
 ## Running experiments
+
 The training logic is implemented inside of the script `main.py`. To
 get more information about the CLI run
 

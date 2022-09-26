@@ -4,6 +4,7 @@ import haiku as hk
 import jax
 import jax.numpy as jnp
 
+
 def foo(x: jnp.ndarray) -> jnp.ndarray:
     mlp = hk.nets.MLP([4, 5, 1])
 

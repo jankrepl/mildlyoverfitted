@@ -34,11 +34,11 @@ class CustomIndexPQ:
     """
 
     def __init__(
-        self,
-        d: int,
-        m: int,
-        nbits: int,
-        **estimator_kwargs: str | int,
+            self,
+            d: int,
+            m: int,
+            nbits: int,
+            **estimator_kwargs: str | int,
     ) -> None:
         if d % m != 0:
             raise ValueError("d needs to be a multiple of m")
@@ -47,7 +47,7 @@ class CustomIndexPQ:
             raise ValueError(f"Unsupported number of bits {nbits}")
 
         self.m = m
-        self.k = 2**nbits
+        self.k = 2 ** nbits
         self.d = d
         self.ds = d // m
 
@@ -77,13 +77,12 @@ class CustomIndexPQ:
 
         for i in range(self.m):
             estimator = self.estimators[i]
-            X_i = X[:, i * self.ds : (i + 1) * self.ds]
+            X_i = X[:, i * self.ds: (i + 1) * self.ds]
 
             logger.info(f"Fitting KMeans for the {i}-th segment")
             estimator.fit(X_i)
 
         self.is_trained = True
-
 
     def encode(self, X: np.ndarray) -> np.ndarray:
         """Encode original features into codes.
@@ -103,7 +102,7 @@ class CustomIndexPQ:
 
         for i in range(self.m):
             estimator = self.estimators[i]
-            X_i = X[:, i * self.ds : (i + 1) * self.ds]
+            X_i = X[:, i * self.ds: (i + 1) * self.ds]
             result[:, i] = estimator.predict(X_i)
 
         return result
@@ -148,7 +147,7 @@ class CustomIndexPQ:
         )  # (n_queries, m, k)
 
         for i in range(self.m):
-            X_i = X[:, i * self.ds : (i + 1) * self.ds]  # (n_queries, ds)
+            X_i = X[:, i * self.ds: (i + 1) * self.ds]  # (n_queries, ds)
             centers = self.estimators[i].cluster_centers_  # (k, ds)
             distance_table[:, i, :] = euclidean_distances(
                 X_i, centers, squared=True

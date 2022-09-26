@@ -81,79 +81,79 @@ def make_seed(size, n_channels):
 
 def main(argv=None):
     parser = argparse.ArgumentParser(
-            description="Training script for the Celluar Automata"
+        description="Training script for the Celluar Automata"
     )
     parser.add_argument("img", type=str, help="Path to the image we want to reproduce")
 
     parser.add_argument(
-            "-b",
-            "--batch-size",
-            type=int,
-            default=8,
-            help="Batch size. Samples will always be taken randomly from the pool."
+        "-b",
+        "--batch-size",
+        type=int,
+        default=8,
+        help="Batch size. Samples will always be taken randomly from the pool."
     )
     parser.add_argument(
-            "-d",
-            "--device",
-            type=str,
-            default="cpu",
-            help="Device to use",
-            choices=("cpu", "cuda"),
+        "-d",
+        "--device",
+        type=str,
+        default="cpu",
+        help="Device to use",
+        choices=("cpu", "cuda"),
     )
     parser.add_argument(
-            "-e",
-            "--eval-frequency",
-            type=int,
-            default=500,
-            help="Evaluation frequency.",
+        "-e",
+        "--eval-frequency",
+        type=int,
+        default=500,
+        help="Evaluation frequency.",
     )
     parser.add_argument(
-            "-i",
-            "--eval-iterations",
-            type=int,
-            default=300,
-            help="Number of iterations when evaluating.",
+        "-i",
+        "--eval-iterations",
+        type=int,
+        default=300,
+        help="Number of iterations when evaluating.",
     )
     parser.add_argument(
-            "-n",
-            "--n-batches",
-            type=int,
-            default=5000,
-            help="Number of batches to train for.",
+        "-n",
+        "--n-batches",
+        type=int,
+        default=5000,
+        help="Number of batches to train for.",
     )
     parser.add_argument(
-            "-c",
-            "--n-channels",
-            type=int,
-            default=16,
-            help="Number of channels of the input tensor",
+        "-c",
+        "--n-channels",
+        type=int,
+        default=16,
+        help="Number of channels of the input tensor",
     )
     parser.add_argument(
-            "-l",
-            "--logdir",
-            type=str,
-            default="logs",
-            help="Folder where all the logs and outputs are saved.",
+        "-l",
+        "--logdir",
+        type=str,
+        default="logs",
+        help="Folder where all the logs and outputs are saved.",
     )
     parser.add_argument(
-            "-p",
-            "--padding",
-            type=int,
-            default=16,
-            help="Padding. The shape after padding is (h + 2 * p, w + 2 * p).",
+        "-p",
+        "--padding",
+        type=int,
+        default=16,
+        help="Padding. The shape after padding is (h + 2 * p, w + 2 * p).",
     )
     parser.add_argument(
-            "--pool-size",
-            type=int,
-            default=1024,
-            help="Size of the training pool",
+        "--pool-size",
+        type=int,
+        default=1024,
+        help="Size of the training pool",
     )
     parser.add_argument(
-            "-s",
-            "--size",
-            type=int,
-            default=40,
-            help="Image size",
+        "-s",
+        "--size",
+        type=int,
+        default=40,
+        help="Image size",
     )
     # Parse arguments
     args = parser.parse_args()
@@ -186,7 +186,7 @@ def main(argv=None):
 
     for it in tqdm(range(args.n_batches)):
         batch_ixs = np.random.choice(
-                args.pool_size, args.batch_size, replace=False
+            args.pool_size, args.batch_size, replace=False
         ).tolist()
 
         x = pool[batch_ixs]

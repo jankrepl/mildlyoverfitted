@@ -49,13 +49,13 @@ class Task:
     """
 
     def __init__(
-        self,
-        render=False,
-        shuffle_on_reset=False,
-        n_noise_features=0,
-        env_seed=None,
-        feature_seed=None,
-        max_episode_steps=1000,
+            self,
+            render=False,
+            shuffle_on_reset=False,
+            n_noise_features=0,
+            env_seed=None,
+            feature_seed=None,
+            max_episode_steps=1000,
     ):
 
         self.env = gym.make("CartPoleSwingUp-v1")
@@ -124,8 +124,8 @@ class Task:
         n_features_task = self.n_features
 
         if (
-            n_features_solution is not None
-            and n_features_solution != n_features_task
+                n_features_solution is not None
+                and n_features_solution != n_features_task
         ):
             raise IncompatibleNFeatures
 

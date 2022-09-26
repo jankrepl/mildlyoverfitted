@@ -2,11 +2,13 @@ import numpy as np
 import torch
 from torch.optim import Optimizer
 
+
 class WeirdDescent(Optimizer):
     """Take a coordinate descent step for a random parameter.
 
     And also, make every 100th step way bigger.
     """
+
     def __init__(self, parameters, lr=1e-3):
         defaults = {"lr": lr}
         super().__init__(parameters, defaults)

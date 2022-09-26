@@ -1,4 +1,5 @@
 # GPT-2 custom implementation
+
 ## Installation
 
 ```python
@@ -6,6 +7,7 @@ pip install -r requirements.txt
 ```
 
 ## Launching script
+
 To copy weights of an official model + generate some text use the script
 `copy_and_generate.py`
 

@@ -1,11 +1,12 @@
-from matplotlib.animation import FuncAnimation
 import matplotlib.pyplot as plt
 import numpy as np
 import torch
+from matplotlib.animation import FuncAnimation
 from torch.optim import Adam, SGD
 from tqdm import tqdm
 
 from custom import WeirdDescent
+
 
 def rosenbrock(xy):
     """Evaluate Rosenbrock function.
@@ -23,6 +24,7 @@ def rosenbrock(xy):
     x, y = xy
 
     return (1 - x) ** 2 + 100 * (y - x ** 2) ** 2
+
 
 def run_optimization(xy_init, optimizer_class, n_iter, **optimizer_kwargs):
     """Run optimization finding the minimum of the Rosenbrock function.
@@ -63,6 +65,7 @@ def run_optimization(xy_init, optimizer_class, n_iter, **optimizer_kwargs):
         path[i, :] = xy_t.detach().numpy()
 
     return path
+
 
 def create_animation(paths,
                      colors,
@@ -134,6 +137,7 @@ def create_animation(paths,
     anim = FuncAnimation(fig, animate, frames=path_length, interval=ms_per_frame)
 
     return anim
+
 
 if __name__ == "__main__":
     xy_init = (.3, .8)

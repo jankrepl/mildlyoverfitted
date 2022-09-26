@@ -54,6 +54,7 @@ def compute_knn(backbone, data_loader_train, data_loader_val):
 
     return acc
 
+
 def compute_embedding(backbone, data_loader):
     """Compute CLS embedding and prepare for TensorBoard.
 

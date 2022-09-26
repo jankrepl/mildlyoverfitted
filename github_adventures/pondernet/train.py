@@ -1,6 +1,6 @@
-from argparse import ArgumentParser
 import json
 import pathlib
+from argparse import ArgumentParser
 
 import matplotlib.pyplot as plt
 import torch

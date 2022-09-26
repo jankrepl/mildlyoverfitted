@@ -7,6 +7,7 @@ from transformers import (AutoTokenizer, AutoModelForMaskedLM, BatchEncoding,
 
 from app import get_top_k
 
+
 @pytest.mark.parametrize("k", [5, 7])
 def test_with_real_objects(k):
     tokenizer = AutoTokenizer.from_pretrained("bert-base-uncased")
@@ -17,6 +18,7 @@ def test_with_real_objects(k):
 
     assert isinstance(res, torch.Tensor)
     assert res.shape == (k,)
+
 
 @pytest.mark.parametrize("k", [5, 7])
 def test_with_mock_objects(k):

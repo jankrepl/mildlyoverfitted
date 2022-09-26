@@ -81,7 +81,7 @@ class MixerBlock(nn.Module):
     """
 
     def __init__(
-        self, *, n_patches, hidden_dim, tokens_mlp_dim, channels_mlp_dim
+            self, *, n_patches, hidden_dim, tokens_mlp_dim, channels_mlp_dim
     ):
         super().__init__()
 
@@ -159,19 +159,20 @@ class MlpMixer(nn.Module):
     head_classifier : nn.Linear
         The classification head.
     """
+
     def __init__(
-        self,
-        *,
-        image_size,
-        patch_size,
-        tokens_mlp_dim,
-        channels_mlp_dim,
-        n_classes,
-        hidden_dim,
-        n_blocks,
+            self,
+            *,
+            image_size,
+            patch_size,
+            tokens_mlp_dim,
+            channels_mlp_dim,
+            n_classes,
+            hidden_dim,
+            n_blocks,
     ):
         super().__init__()
-        n_patches = (image_size // patch_size) ** 2 # assumes divisibility
+        n_patches = (image_size // patch_size) ** 2  # assumes divisibility
 
         self.patch_embedder = nn.Conv2d(
             3,

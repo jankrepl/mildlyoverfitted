@@ -45,13 +45,13 @@ def save(folder, n_iter, solver, solution_inst):
 
 
 def get_fitness(
-    solution_inst,
-    *,
-    shuffle_on_reset,
-    n_episodes,
-    n_noise_features,
-    env_seed,
-    feature_seed,
+        solution_inst,
+        *,
+        shuffle_on_reset,
+        n_episodes,
+        n_noise_features,
+        env_seed,
+        feature_seed,
 ):
     """Get fitness function used by the CMA optimizer/solver.
 
@@ -217,7 +217,6 @@ def main(argv=None):
     else:
         n_jobs = args.n_jobs
 
-
     with mp.Pool(processes=n_jobs) as pool:
         for n_iter in tqdm.tqdm(range(args.max_iter)):
             try:
@@ -243,7 +242,7 @@ def main(argv=None):
                     writer.add_scalar(metric_name, metric, global_step=n_iter)
 
                 if (n_iter % args.eval_frequency == 0) or (
-                    n_iter == (args.max_iter - 1)
+                        n_iter == (args.max_iter - 1)
                 ):
                     save(args.log_dir, n_iter, solver, solution_inst)
 

@@ -2,8 +2,8 @@
 
 Code for https://www.youtube.com/c/mildlyoverfitted.
 
-
 ### Overview
+
 | Name                                                                           | Video                                | Code                                                                                                                       |
 |--------------------------------------------------------------------------------|--------------------------------------|----------------------------------------------------------------------------------------------------------------------------|
 | Custom optimizer in PyTorch                                                    | [link](https://youtu.be/zvp8K4iX2Cs) | [link](https://github.com/jankrepl/mildlyoverfitted/tree/master/mini_tutorials/custom_optimizer_in_pytorch)                |
