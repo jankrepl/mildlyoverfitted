@@ -71,7 +71,7 @@ class Network(Module):
     Parameters
     ----------
     vocab_size : int
-        The number of charactesr in the vocabulary.
+        The number of characters in the vocabulary.
 
     embedding_dim : int
         Dimension of the character embedding vectors.
