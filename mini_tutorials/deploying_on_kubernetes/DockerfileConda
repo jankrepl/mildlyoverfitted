@@ -1,0 +1,15 @@
+FROM continuumio/miniconda3
+
+RUN conda install -c conda-forge pytorch-cpu
+RUN conda install -c conda-forge fastapi
+RUN conda install -c conda-forge uvicorn
+RUN conda install -c huggingface transformers
+RUN conda install -c conda-forge huggingface_hub=0.2.1
+
+RUN python3 -c "from transformers import AutoModel;AutoModel.from_pretrained('bert-base-uncased')"
+RUN python3 -c "from transformers import AutoTokenizer;AutoTokenizer.from_pretrained('bert-base-uncased')"
+
+
+EXPOSE 8888
+ENTRYPOINT ["transformers-cli", "serve", "--port=8888", "--host=0.0.0.0", "--task=fill-mask", "--model=bert-base-uncased"]
+
