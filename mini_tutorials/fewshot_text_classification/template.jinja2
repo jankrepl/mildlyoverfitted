@@ -1,0 +1,22 @@
+I want you to classify text for me.
+See below all the possible labels and their description
+{% for item in labels %}
+"""
+description: {{ item.description }}
+label: {{ item.label }}
+"""
+{% endfor %}
+{% if examples %}
+See below a couple of examples
+{% for item in examples %}
+"""
+text: {{ item.text }}
+label: {{ item.label }}
+"""
+{% endfor %}
+{% endif %}
+
+Here is the text that needs to be classified
+"""
+text: {{ text }}
+label:
