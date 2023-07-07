@@ -4,7 +4,7 @@ import operator
 import sys
 import datetime
 from datetime import date
-today = date.today()
+date_today = date.today()
 
 
 import openai
