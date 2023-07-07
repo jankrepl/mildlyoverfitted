@@ -4,11 +4,11 @@ import operator
 import sys
 import datetime
 from datetime import date
-date_today = date.today()
-
-
 import openai
 import yfinance as yf
+
+format="%Y/%m/%d"
+date_today = date.today().strftime(format) 
 
 logging.basicConfig(level=logging.WARNING, format="%(asctime)s %(message)s")
 
@@ -78,7 +78,7 @@ calculate_metadata = {
 
 
 messages = [{"role": "user", "content": sys.argv[1]}},
-            {"role": "system", "content": f"You are an helpfful financial investor who overlooks the performace of stocks. Today is {date_today} ."}]
+{"role": "system", "content": f"You are a helpful financial investor who overlooks the performance of stocks. Today is {date_today}. Note that the format of date is YYYY/MM/DD"}]
 
 while True:
     response = openai.ChatCompletion.create(
