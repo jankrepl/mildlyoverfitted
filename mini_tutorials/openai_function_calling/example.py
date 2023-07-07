@@ -2,6 +2,10 @@ import json
 import logging
 import operator
 import sys
+import datetime
+from datetime import date
+today = date.today()
+
 
 import openai
 import yfinance as yf
@@ -72,7 +76,9 @@ calculate_metadata = {
     },
 }
 
-messages = [{"role": "user", "content": sys.argv[1]}]
+
+messages = [{"role": "user", "content": sys.argv[1]}},
+            {"role": "system", "content": f"You are an helpfful financial investor who overlooks the performace of stocks. Today is {date_today} ."}]
 
 while True:
     response = openai.ChatCompletion.create(
