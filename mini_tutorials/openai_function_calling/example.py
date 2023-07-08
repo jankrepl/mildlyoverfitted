@@ -2,9 +2,11 @@ import json
 import logging
 import operator
 import sys
-
+import datetime
 import openai
 import yfinance as yf
+
+TODAY = datetime.date.today().strftime("%Y/%m/%d")
 
 logging.basicConfig(level=logging.WARNING, format="%(asctime)s %(message)s")
 
@@ -20,6 +22,7 @@ def get_price(symbol: str, date: str) -> float:
     )
 
     return history["Close"].iloc[0].item()
+
 
 def calculate(a: float, b: float, op: str) -> float:
     logger.info(f"Calling calculate with {a=}, {b=} and {op=}")
@@ -41,7 +44,6 @@ get_price_metadata = {
                 "type": "string",
                 "description": "Date in the format YYYY-MM-DD",
             },
-
         },
         "required": ["symbol", "date"],
     },
@@ -66,13 +68,21 @@ calculate_metadata = {
                 "enum": ["mul", "add", "truediv", "sub"],
                 "description": "Binary operation",
             },
-
         },
         "required": ["a", "b", "op"],
     },
 }
 
-messages = [{"role": "user", "content": sys.argv[1]}]
+
+messages = [
+    {"role": "user", "content": sys.argv[1]},
+    {
+        "role": "system",
+        "content": "You are a helpful financial investor who overlooks the "
+        f"performance of stocks. Today is {TODAY}. Note that the "
+        "format of the date is YYYY/MM/DD",
+    },
+]
 
 while True:
     response = openai.ChatCompletion.create(
@@ -98,12 +108,9 @@ while True:
     else:
         raise ValueError
 
-    messages.append(
-        {"role": "function", "name": function_name, "content": output}
-    )
+    messages.append({"role": "function", "name": function_name, "content": output})
 
 print("*" * 80)
 print([m["role"] for m in messages])
 print("*" * 80)
 print(messages[-1]["content"])
-
