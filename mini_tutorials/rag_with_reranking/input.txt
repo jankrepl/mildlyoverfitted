@@ -1,0 +1,14 @@
+# AGE AND FAVOURITE FOOD - 'What is the favourite food of Charles?', 'Who prefers vegetables the most?'
+Adam is older than Ben
+Ben is older then Charles
+Adam eats a lot of carrots
+Ben's favourite food is an apple
+Charles loves KFC
+Whatever, this sentence does not really contain anything super important
+
+# SPORTING EVENTS - 'What country managed to become world football champion after 2050'?
+Brazil won the Fifa World Cup in 2070
+France is pretty good at football and won many championships
+Finland has won many ice hockey world cups
+Jamaica won the Athletics World Cup in 2055
+Mexico won the Golf World Cup in 2050
