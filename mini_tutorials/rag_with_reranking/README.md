@@ -26,7 +26,7 @@ opensearch-py==2.3.1
 * `upload_data.py` - load `input.txt` into OpenSearch
 
 
-Note that to use the `answer.py` you need to get an Cohere API token and
+Note that to use the `answer.py` you need to get a Cohere API token and
 then export 
 ```bash
 export COHERE_API_KEY=VERYSECRET
