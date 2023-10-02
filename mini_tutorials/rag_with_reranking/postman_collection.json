@@ -1,0 +1,291 @@
+{
+	"info": {
+		"name": "Retrieval augmented generation",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "25438192"
+	},
+	"item": [
+		{
+			"name": "OpenSearch",
+			"item": [
+				{
+					"name": "Get all indices",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{OpenSearchURL}}/_cat/indices?v=true&s=index",
+							"host": [
+								"{{OpenSearchURL}}"
+							],
+							"path": [
+								"_cat",
+								"indices"
+							],
+							"query": [
+								{
+									"key": "v",
+									"value": "true"
+								},
+								{
+									"key": "s",
+									"value": "index"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Create index",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"settings\": {\n    \"index\": {\n      \"number_of_shards\": 1,\n      \"number_of_replicas\": 1\n    }\n  },\n  \"mappings\": {\n    \"properties\": {\n      \"stuff\": {\n        \"type\": \"text\"\n      }\n    }\n  }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OpenSearchURL}}/cool_index",
+							"host": [
+								"{{OpenSearchURL}}"
+							],
+							"path": [
+								"cool_index"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete index",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OpenSearchURL}}/cool_index",
+							"host": [
+								"{{OpenSearchURL}}"
+							],
+							"path": [
+								"cool_index"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add document",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"stuff\": \"This is just some document\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OpenSearchURL}}/cool_index/_doc",
+							"host": [
+								"{{OpenSearchURL}}"
+							],
+							"path": [
+								"cool_index",
+								"_doc"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "List all documents",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": {\n        \"match_all\": {}\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OpenSearchURL}}/cool_index/_search",
+							"host": [
+								"{{OpenSearchURL}}"
+							],
+							"path": [
+								"cool_index",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Lexical (BM 25) search",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"query\": {\n        \"match\": {\n            \"stuff\": \"Some document\"\n        }\n    }\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{OpenSearchURL}}/cool_index/_search",
+							"host": [
+								"{{OpenSearchURL}}"
+							],
+							"path": [
+								"cool_index",
+								"_search"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cohere",
+			"item": [
+				{
+					"name": "Embed",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"texts\": [\n    \"hello\",\n    \"goodbye\"\n  ],\n  \"truncate\": \"END\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CohereURL}}/embed",
+							"host": [
+								"{{CohereURL}}"
+							],
+							"path": [
+								"embed"
+							]
+						},
+						"description": "[https://docs.cohere.com/reference/embed](https://docs.cohere.com/reference/embed)"
+					},
+					"response": []
+				},
+				{
+					"name": "Rerank",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n  \"return_documents\": false,\n  \"max_chunks_per_doc\": 10,\n  \"query\": \"What is the capital of the United States?\",\n  \"documents\": [\n    \"Carson City is the capital city of the American state of Nevada.\",\n    \"The Commonwealth of the Northern Mariana Islands is a group of islands in the Pacific Ocean. Its capital is Saipan.\",\n    \"Washington, D.C. (also known as simply Washington or D.C., and officially as the District of Columbia) is the capital of the United States. It is a federal district.\",\n    \"Capital punishment (the death penalty) has existed in the United States since beforethe United States was a country. As of 2017, capital punishment is legal in 30 of the 50 states.\"\n  ]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CohereURL}}/rerank",
+							"host": [
+								"{{CohereURL}}"
+							],
+							"path": [
+								"rerank"
+							]
+						},
+						"description": "[https://docs.cohere.com/reference/embed](https://docs.cohere.com/reference/embed)"
+					},
+					"response": []
+				},
+				{
+					"name": "Chat",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": " {\n    \"chat_history\": [\n      {\"role\": \"USER\", \"message\": \"Who discovered gravity?\"},\n      {\"role\": \"CHATBOT\", \"message\": \"The man who is widely credited with discovering gravity is Sir Isaac Newton\"}\n    ],\n    \"message\": \"What year was he born?\"\n  }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{CohereURL}}/chat",
+							"host": [
+								"{{CohereURL}}"
+							],
+							"path": [
+								"chat"
+							]
+						},
+						"description": ""
+					},
+					"response": []
+				}
+			],
+			"auth": {
+				"type": "bearer",
+				"bearer": [
+					{
+						"key": "token",
+						"value": "{{CohereAPIKey}}",
+						"type": "string"
+					}
+				]
+			},
+			"event": [
+				{
+					"listen": "prerequest",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				},
+				{
+					"listen": "test",
+					"script": {
+						"type": "text/javascript",
+						"exec": [
+							""
+						]
+					}
+				}
+			]
+		}
+	]
+}
