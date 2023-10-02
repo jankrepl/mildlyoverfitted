@@ -24,3 +24,11 @@ opensearch-py==2.3.1
 * `answer.py` - scripts that does RAG question answering - requires question as the only argument
 * `input.txt` - each line corresponds to a document to be added to OpenSearch(except for emtpy lines and comments)
 * `upload_data.py` - load `input.txt` into OpenSearch
+
+
+Note that to use the `answer.py` you need to get an Cohere API token and
+then export 
+```bash
+export COHERE_API_KEY=VERYSECRET
+python answer.py 'What is the meaning of life?'
+```
