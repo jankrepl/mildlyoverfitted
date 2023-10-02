@@ -40,3 +40,11 @@ simply add the following 3 variables in your environment
 * `OpenSearchURL` - will be `http://localhost:9200` if you follow the above instructions
 * `CohereURL` - should be `https://api.cohere.ai/v1`
 * `CohereAPIKey` - you need to generate this yourself
+
+# Diagrams
+
+## RAG with embeddings
+<img width="1165" alt="rag-with-embeddings" src="https://github.com/jankrepl/mildlyoverfitted/assets/18519371/678e69eb-96a9-4fa1-bcff-8c848d69f10a">
+
+## RAG with reranking
+<img width="1169" alt="rag-with-reranking" src="https://github.com/jankrepl/mildlyoverfitted/assets/18519371/45ea091b-5724-4117-bfec-d219afdd9f40">
