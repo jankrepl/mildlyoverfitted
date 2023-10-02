@@ -32,3 +32,11 @@ then export
 export COHERE_API_KEY=VERYSECRET
 python answer.py 'What is the meaning of life?'
 ```
+
+## Postman
+You can import the `postman_collection.json` in Postman and then
+simply add the following 3 variables in your environment
+
+* `OpenSearchURL` - will be `http://localhost:9200` if you follow the above instructions
+* `CohereURL` - should be `https://api.cohere.ai/v1`
+* `CohereAPIKey` - you need to generate this yourself
