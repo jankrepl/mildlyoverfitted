@@ -1,0 +1,9 @@
+service: "service:svc"
+include:
+- "service.py"
+python:
+  packages:
+  - pydantic
+  - scikit-learn
+models:
+- iris_clf:latest
