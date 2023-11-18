@@ -2,7 +2,8 @@
 2. [Installation](#installation)
 3. [Instructions](#instructions)
     1. [`bentoml`](#bentoml)
-    1. [`bentoctl`](#bentoml)
+    1. [`bentoctl`](#bentoctl)
+    1. [`aws` CLI](#aws-cli)
 4. [Sketches](#sketches)
 
 # Resources
