@@ -130,4 +130,5 @@ aws sagemaker list-endpoints
 
 
 # Sketches
-
+<img width="1250" alt="bentoml-overview" src="https://github.com/jankrepl/mildlyoverfitted/assets/18519371/eeb60c7f-2bbd-40df-9d89-95c0a720c16b">
+<img width="1069" alt="sklearn-sagemaker" src="https://github.com/jankrepl/mildlyoverfitted/assets/18519371/58848152-cffb-4ec2-8b8f-b25a3d6647c0">
