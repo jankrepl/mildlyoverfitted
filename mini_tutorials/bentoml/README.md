@@ -15,6 +15,16 @@
 ```bash
 pip install -r requirements.txt
 ```
+See below the actual versions at the time of making the video
+```txt
+bentoctl==0.4.0
+bentoml==1.1.9
+boto3==1.29.0
+numpy==1.26.2
+pydantic==2.5.1
+pydantic_core==2.14.3
+scikit-learn==1.3.2
+```
 
 # Instructions
 ## `bentoml`
