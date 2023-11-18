@@ -1,6 +1,7 @@
 1. [Resources](#resources)
 2. [Installation](#installation)
 3. [Instructions](#instructions)
+    a. [bentoml](#`bentoml`)
 4. [Sketches](#sketches)
 
 # Resources
@@ -46,6 +47,8 @@ bentoml serve service.py
 ```
 
 ## `bentoctl`
+
+## `aws` CLI
 
 
 # Sketches
