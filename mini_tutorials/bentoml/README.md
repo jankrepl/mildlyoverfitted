@@ -1,3 +1,8 @@
+1. [Resources](#resources)
+2. [Installation](#installation)
+3. [Instructions](#instructions)
+4. [Sketches](#sketches)
+
 # Resources
 * https://docs.bentoml.com/en/latest/
 * https://github.com/bentoml/bentoctl
