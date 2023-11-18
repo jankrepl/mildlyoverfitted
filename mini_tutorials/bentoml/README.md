@@ -1,7 +1,7 @@
 1. [Resources](#resources)
 2. [Installation](#installation)
 3. [Instructions](#instructions)
-    a. [bentoml](#`bentoml`)
+    1. [bentoml](#bentoml)
 4. [Sketches](#sketches)
 
 # Resources
