@@ -49,8 +49,84 @@ bentoml serve service.py
 ```
 
 ## `bentoctl`
+Install SageMaker operator
+```bash
+bentoctl operator install aws-sagemaker
+```
+
+Initialize
+```bash
+bentoctl init
+```
+
+ATTENTION: All of the below assumes that you have correctly set up AWS
+secret keys and permissions.
+
+Build custom customized SageMaker image and push to ECR
+
+```bash
+bentoctl build -f deployment_config.yaml -b $BENTO
+```
+
+
+Initialize terraform
+```bash
+terraform init
+```
+
+Look at what changes will be applied
+
+```bash
+terraform plan -var-file=bentoctl.tfvars
+```
+
+Actually apply changes
+```bash
+terraform apply -var-file=bentoctl.tfvars
+```
+
+Send request to the API Gateway
+```bash
+curl -X 'POST' "$URL/classify"   -H 'accept: application/json'   -H 'Content-Type: application/json'   -d '{            
+  "sepal_width": 0,
+  "sepal_length": 0,
+  "petal_width": 0,
+  "petal_length": 0
+}'
+```
+
+Destroy resources (not including ECR)
+
+```bash
+terraform destroy -var-file=bentoctl.tfvars
+```
+
+Destroy resources  including ECR)
+
+```bash
+bentoctl destroy
+```
 
 ## `aws` CLI
+Describe repositories
+```bash
+aws ecr describe-repositories
+```
+
+List all images in the repository `amazing-iris`
+```bash
+aws ecr list-images --repository-name=amazing-iris
+```
+
+List SageMaker models
+```bash
+aws sagemaker list-models
+```
+
+List SageMaker endpoints
+```bash
+aws sagemaker list-endpoints
+```
 
 
 # Sketches
